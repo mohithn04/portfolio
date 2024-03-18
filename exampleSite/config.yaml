@@ -238,13 +238,11 @@ params:
         info:
           enable: true
           content: I worked as a Software Developer Intern for the 2023 Summer at Miles IT
-        content: "- Developed and implemented software features for clients using languages such as Java, Javascript, HTML/CSS
-        
-        -	Participated in agile development processes, including sprint planning and scrum meetings.
-        
-        - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
-        
-        - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, and Cloud Service Technology."
+        content: |
+          - Developed and implemented software features for clients using languages such as Java, Javascript, HTML/CSS
+          -	Participated in agile development processes, including sprint planning and scrum meetings.
+          - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
+          - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, and Cloud Service Technology.
 
       - job: "Genome Computing Researcher"
         company: "UMD FIRE"
@@ -293,7 +291,7 @@ params:
         #  enable: true
         #  url: "https://example.com"
         content: |
-          - Played a key role in the establishment of the Computer Science National Honor Society (CSNHS), demonstrating strong leadership skills and initiative. This involved coordinating with school administrators, defining the society’s mission and goals, and recruiting members.
+          - Played a key role in the establishment of the Computer Science National Honor Society (CSNHS) at Robbinsville High School, demonstrating strong leadership skills and initiative. This involved coordinating with school administrators, defining the society’s mission and goals, and recruiting members.
           - Organized and actively participated in various events such as hackathons, workshops, conferences, and guest lectures. These events provided opportunities for students to learn new skills, network with professionals in the field, and showcase their own projects.
           - Collaborated with peers on numerous coding projects, which involved brainstorming ideas, dividing tasks, writing code, and troubleshooting issues. These projects not only resulted in functional software applications but also improved problem-solving skills and the ability to work effectively in a team.
           - Worked to promote computer science education within the school community. This involved conducting informational sessions, providing tutoring support, and creating a welcoming environment for all students interested in computer science. These efforts led to the accumulation of 127 members within the first year of the CSNHS's establishment.
