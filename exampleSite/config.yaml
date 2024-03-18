@@ -256,7 +256,7 @@ params:
         #  url: "https://example.com"
         info:
           enable: true
-          content: Conducted research on Genome Computing for more than one year at UMD FIRE.
+          content: Conducted research on Genome Computing for over a year at UMD FIRE.
         content: |
           - Utilized command line and C++ for scientific computing, significantly accelerating data processing.
           - Analyzed and modeled complex genomic data using Python and R, leading to more accurate results by 10-15%.
@@ -269,7 +269,7 @@ params:
       - job: "Volunteer Mentor"
         company: "FIRST"
         companyUrl: "https://www.firstinspires.org/"
-        date: "Sep. 2023 - Present"
+        date: "September 2023 - Present"
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
