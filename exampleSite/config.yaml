@@ -1,0 +1,509 @@
+baseURL: "https://mohithn.netlify.app/"
+languageCode: en-us
+title: Mohith's Portfolio & Perspective
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+disqusShortname: portfolio-bf44qbzkws
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    #- identifier: gallery
+    #  name: Gallery
+    #  title: Blog posts
+    #  url: /gallery
+    #  weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Mohith's Portfolio & Perspective"
+  description: Check out my portfolio and blog!
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/ML.jpg"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+  
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    defaultTheme: "dark" # light
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # color:
+  #   textColor:
+  #   secondaryTextColor:
+  #   backgroundColor:
+  #   secondaryBackgroundColor:
+  #   primaryColor:
+  #   secondaryColor:
+
+  #   darkmode:
+  #     textColor:
+  #     secondaryTextColor:
+  #     backgroundColor:
+  #     secondaryBackgroundColor:
+  #     primaryColor:
+  #     secondaryColor:
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Portfolio & Perspective" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    searchPlaceholder: "Search"
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Mohith."
+    subtitle: "Coding today for the solutions of tomorrow."
+    content: "As a Computer Science student on the Machine Learning track with a minor in Innovation & Entrepreneurship at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
+    image: /images/Mohith-Grad.jpg
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Resume"
+      url: "https://1drv.ms/w/s!AlwQ8SHBTye_gW1dCJgaLnsW6iNH?e=GNtcAi"
+      download: true
+      newPage: true
+    socialLinks:
+      customIcons:
+        - icon: /github.svg
+          url: https://github.com/Mohith-sys
+        - icon: /envelope.svg
+          url: mailto:mohith.n2022@gmail.com
+        - icon: /linkedin.svg
+          url: https://www.linkedin.com/in/mohith-nagendra/
+        - icon: /flipboard.svg
+          url: https://flipboard.com/@MohithNagendra?from=share&utm_source=flipboard&utm_medium=curator_share
+        - icon: /ML.jpg
+          url: "https://mohithn.netlify.app/blogs/"
+        
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/IMG-5204.JPG"
+    content: |-
+      I am a computer science student with a passion for software development, data analysis, and web/app development. I'm always eager to learn more and take on new challenges. I believe in the power of technology to solve problems and make our lives better, and I strive to create software that is user-friendly, efficient, and impactful.
+
+      In my spare time, I enjoy soccer, volleyball, basketball, and puzzles. I believe that balance is key to a fulfilling life, and I make sure to pursue my passions outside of work as well.
+
+      I am currently working on a project that will be used to help enhance the user experience for nightlife enthusiasts.
+
+      Feel free to check out [**my blog**](https://mohithn.netlify.app/blogs/) or browse my portfolio to see some of the projects I've worked on. If you'd like to get in touch, don't hesitate to contact me. I'm always open to new opportunities and collaborations. 
+
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "Java"
+        - "JavaScript"
+        - "C"
+        - "Python"
+        - "R"
+        - "OCaml"
+        - "Rust"
+        - "Racket"
+        - "SQL"
+        - "HTML"
+        - "CSS"
+        - "React"
+        - "APIs"
+        - "Git"
+        - "Jupyter Notebooks"
+        - "Anaconda"
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - job: "Innovation & Software Development Intern"
+        company: "Airweb Digital"
+        companyUrl: "https://www.airwebdigital.com/"
+        date: "November 2023 - Present"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Independently developing an AI-based Attention Analysis feature using machine learning libraries such as TensorFlow or PyTorch. This feature is optimizing a specific type of advertising (billboards), and has led to significant improvements in advertising effectiveness.
+          - Leading the creation of a viewshed analysis deliverable for visibility ranking using drone data, leveraging GIS (Geographic Information System) technologies such as QGIS. This analysis is will be used to identify optimal locations for new advertisements and analyze the effectiveness of existing ad placements.
+          - Working directly with the CEO and consulting with company partners to align the projects with the company's strategic goals. Contributed to key decisions and strategies, and suggested new ideas or approaches that have been implemented.
+          - Leveraging agile practices from experience to manage the projects, displaying initiative and leadership in a startup setting.
+
+      - job: "Full-Stack Developer"
+        company: "NitesOut"
+        companyUrl: "https://www.nitesout.us/"
+        date: "November 2023 - Present"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Working with a team to develop a mobile application for NitesOut, enhancing the user experience for nightlife enthusiasts.
+          - Utilizing various programming languages and frameworks to create a user-friendly interface and efficient backend functionalities.
+          - Collaborating with a team of developers and designers to ensure the app aligns with NitesOut's brand and goals.
+          - Implementing features such as event discovery, ticket purchasing, and social interaction to provide a comprehensive platform for users.
+          - Conducting thorough testing to identify and fix bugs, ensuring a smooth and reliable user experience.
+
+      - job: "Full Stack Developer"
+        company: "Break Through Tech"
+        companyUrl: "https://www.breakthroughtech.org/in-the-news/"
+        date: "December 2023 - Present"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Launched ‘SussanahAI’, a web app that uses AI and the Cohere API for sentiment analysis, spam filtering, and summarization.
+          - Implemented the backend using Flask, handling server-side logic, and devised an interactive frontend using Figma and React.
+          - Shadowed and received mentoring from a software engineer at Microsoft, learned industry best practices, enhancing my skills.
+          - Authored and delivered a professional presentation to effectively communicate project highlights and plans for growth.
+
+      - job: "Software Development Intern"
+        company: "Miles IT"
+        companyUrl: "https://www.milesit.com/"
+        date: "May - August 2023"
+        #featuredLink:
+        #  enable: true
+        #  name: "View the project"
+        #  url: "https://example.com"
+        info:
+          enable: true
+          content: I worked as a Software Developer Intern for the 2023 Summer at Miles IT
+        content: "- Developed and implemented software features for clients using languages such as Java, Javascript, HTML/CSS
+        
+        -	Participated in agile development processes, including sprint planning and scrum meetings.
+        
+        - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
+        
+        - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, and Cloud Service Technology."
+
+      - job: "Genome Computing Researcher"
+        company: "UMD FIRE"
+        companyUrl: "https://www.fire.umd.edu/gc"
+        date: "Aug 2022 - May 2023"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        info:
+          enable: true
+          content: I conducted research on Genome Computing for more than one year at UMD FIRE.
+        content: |
+          - Utilized command line and C++ for scientific computing, significantly accelerating data processing.
+          - Analyzed and modeled complex genomic data using Python and R, leading to more accurate results by 10-15%.
+          - Employed Python and C++ to generate and evaluate structural data of DNA, RNA, and proteins on supercomputers, reducing processing time by 30%.
+          - Developed 3-D computational models of DNA, focusing on data analysis to optimize structures and understand protein-nucleic acid interactions.
+          - Applied data analysis techniques to explore various DNA configurations and their influences, contributing to the understanding of molecular organization and binding activity for enzymes and drugs.
+          - Employed tools such as PyMOL, Jupyter Notebooks, and Anaconda to facilitate data analysis and visualization.
+          - Gained experience in programming, utilizing supercomputers, data analytics, and generating figures.
+
+      - job: "Volunteer Mentor"
+        company: "FIRST"
+        companyUrl: "https://www.firstinspires.org/"
+        date: "Sep. 2023 - Present"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        info:
+          enable: true
+          content: Mentoring Students in Robotics and Coding.
+        content: |
+          - Mentoring a team of girls participating in the FIRST LEGO League (FLL), providing guidance and support in all aspects of the competition, including the Robot Game, Innovation Project, and Core Values.
+          - Successfully guided the team through the qualifiers, advancing to the state round of the competition.
+          - Inspiring and empowering students to be innovators, working side by side with them to build their leadership and problem-solving skills, and fostering their sense of belonging and self-confidence.
+          - Assisting the team with technical and non-technical topics such as programming, building skills, project management, and presentation skills.
+          - Serving as a role model and advisor, helping to instill the principles of Gracious Professionalism® and FIRST Core Values in the students.
+
+      - job: "CSNHS Co-Founder"
+        company: "Robbinsville High School"
+        companyUrl: "https://rhs.robbinsville.k12.nj.us/"
+        date: "September 2020 - June 2022"
+        info:
+          enable: true
+          content: Founder of CSNHS
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Played a key role in the establishment of the Computer Science National Honor Society (CSNHS), demonstrating strong leadership skills and initiative. This involved coordinating with school administrators, defining the society’s mission and goals, and recruiting members.
+          - Organized and actively participated in various events such as hackathons, workshops, conferences, and guest lectures. These events provided opportunities for students to learn new skills, network with professionals in the field, and showcase their own projects.
+          - Collaborated with peers on numerous coding projects, which involved brainstorming ideas, dividing tasks, writing code, and troubleshooting issues. These projects not only resulted in functional software applications but also improved problem-solving skills and the ability to work effectively in a team.
+          - Worked to promote computer science education within the school community. This involved conducting informational sessions, providing tutoring support, and creating a welcoming environment for all students interested in computer science. These efforts led to the accumulation of 127 members within the first year of the CSNHS's establishment.
+
+#      - job: "Product Designer"
+#        company: "Google"
+#        companyUrl: "https://example.com"
+#        date: "Feb 2016 - Mar 2017"
+#        content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "Bachelor of Science in Computer Science - Machine Learning"
+        school:
+          name: "University of Maryland - College Park"
+          url: "https://www.cs.umd.edu/"
+        date: "2022 - 2025"
+        GPA: "Currently 3.6 out of 4.0"
+        content: |-          
+          Minor: Innovation & Entrepreneurship (Robert H. Smith School of Business)
+          
+          Relevant Coursework: Object Oriented Programming I & II, Discrete Structures, Computer Systems, Organization of Programming Languages
+          
+          Extracurriculars: BigTh!nk AI, Google Developer Student Club, Bitcamp, Break Through Tech (Initiative of Cornell Tech)
+
+          Awards: College of Computer, Mathematical, and Natural Sciences' Dean's List
+
+        # The code below creates a button to academic record
+        #featuredLink:
+        #  enable: true
+        #  name: "My academic record"
+        #  url: "https://example.com"
+      - title: "High School"
+        school:
+          name: "Robbinsville High School"
+          url: "https://rhs.robbinsville.k12.nj.us/"
+        date: "2018 - 2022"
+        GPA: "4.3 weighted"
+        content: |-
+          Extracurriculars:
+            - Co-founder of the Computer Science National Honors Society
+            - Varsity soccer
+            - Varsity volleyball
+            - Math National Honors Society
+            - Science National Honors Society
+          
+          Awards:
+            - Honor Roll Student
+            - AP® Scholar with Distinction
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+
+  # Achievements
+  achievements:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: IT Certification
+        content: Completed 30 Hours of Training & Passed Assessments in Remote Support, Desktop Technology, Network Technology, Server Technology, Cloud Service Technology, Remote Support Scenarios.
+        image: /images/MohithsCertificate.jpg
+      - title: AP Scholar With Distinction Award
+        content: Achieved an average score of at least 3.5 on all AP Exams taken, and scores of 3 or higher on five or more exams. 
+        image: /images/AP.png
+      - title: Research in Genome Computing
+        content: Collaborated with a team to Investigate a variety of DNA configurations and their impacts, enhancing comprehension of molecular organization and the binding behavior of enzymes and drugs.
+        image: /images/FIRE.webp
+#      - title: Microsoft Imagine Runner
+#        content: We are developed a product which can help others.
+#      - title: Google Summer of Code
+#        content: Contributed to a open source project.
+#        url: https://example.com
+
+  # projects
+  projects:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: Mohith's Portfolio & Perspective
+        content: A personal portfolio and blog website that I created using Hugo and hosted on Netlify. The website is built with HTML, CSS, Bootstrap, and JavaScript, demonstrating my proficiency in these languages and my ability to create a user-friendly and responsive web design. The blog section of the website serves as a platform for me to share my insights and experiences in the field of computer science, particularly in machine learning, data analytics and innovation. This project not only showcases my technical skills but also my passion for sharing knowledge and engaging with the tech community.
+        image: /images/projects/NH.jpg
+        featured:
+          name: Demo
+          link: https://mohithn.netlify.app/blogs/
+        badges:
+          - "Hugo"
+          - "Bootstrap"
+          - "Javascript"
+          - "HTML"
+          - "CSS"
+          - "Netlify"
+        links:
+          - icon: fa fa-envelope
+            url: mailto:mohith.n2022@gmail.com?subject=Mohith's%20Portfolio%20and%20Perspective&body=Check%20it%20out:%20https://mohithn.netlify.app/blogs/
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys/portfolio
+      
+      - title: Account Ownership Data Analysis
+        content: Utilized R programming and data visualization techniques. Analyzed account ownership data for countries according to gender. Explored trends in Brazil, India, and the United States. Investigated ownership percentages for primary education or less and secondary education or more. Examined data for Chile, Serbia, Uganda, France, and Peru. Conducted statistical analysis and drew conclusions on account ownership trends.
+        image: /images/projects/acct.png
+        badges:
+          - "R"
+          - "R Notebooks"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+
+      - title: TaskMaster Application - Java-based To-Do List Application
+        content: Engineered a clean and simple Java-based application with an intuitive UI for efficient task management. It includes a task sorting algorithm and a search function that utilizes regular expressions. The application is designed with robust error handling mechanisms and is currently being migrated to AWS for secure data storage and user authentication.
+        image: /images/projects/todo.png
+        badges:
+          - "Java"
+          - "AWS"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+
+      - title: StocksEye - Real-time Stock Tracking Web Application
+        content: This is a web application currently under development, designed to track stock prices and provide real-time updates. The frontend is being developed using React.js, Chart.js, and JavaScript. It integrates a financial data provider API for stock data retrieval and implements real-time updates for stock prices.
+        image: /images/projects/stocks.jpg
+        badges:
+          - "React.js"
+          - "Chart.js"
+          - "JavaScript"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+
+      - title: University Registration System
+        content: Engineered a Java-based application for efficient course tracking and student registration at a university. The system is designed to streamline processes for over 1000 students. It includes concurrent programming techniques that enable multiple students to register for courses simultaneously, increasing system throughput by up to 50%.
+        image: /images/projects/registration.png
+        badges:
+          - "Java"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+
+      - title: Modified Ribosome Simulation
+        content: Developed a Python program simulating a modified ribosome's functionality for building amino acid chains from RNA sequences. Implemented five special commands, including START, STOP, DEL, EXCHANGE, and SWAP, to manipulate the protein building process. Created functions to read codon mappings and evaluation orders from files, encode RNA sequences, decode amino acid chains, and operate on RNA sequences based on evaluation rules. Utilized data structures to store codon mappings and evaluation orders, ensuring efficient processing. Tested the program against various sequences and evaluation orders to verify its accuracy and functionality
+        image: /images/projects/ribosomes.jpg
+        badges:
+          - "Python"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+      
+      - title: Mad Raisin CPU
+        content: Designed and implemented 10+ functions using bit operators and bit masking to extract and manipulate fields of MAD Raisin processor instructions. Developed functions to load and disassemble programs in memory. Increased understanding of hardware and assembly language concepts. Coded and maintained project using C on MobaXterm
+        image: /images/projects/CPU.jpg
+        badges:
+          - "C"
+          - "Assembly"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/Mohith-sys
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: My inbox is always open. Whether you have a question, want to see my projects, or just want to say hi. I'll try my best to get back to you!
+    email: mohith.n2022@gmail.com
+    btnName: Mail me
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/Mohith-sys
+      linkedin: https://www.linkedin.com/in/mohith-nagendra/
+      twitter: https://twitter.com
+      instagram: https://instagram.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
