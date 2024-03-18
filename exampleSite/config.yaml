@@ -200,13 +200,16 @@ params:
           - Working directly with the CEO and consulting with company partners to align the projects with the company's strategic goals. Contributed to key decisions and strategies, and suggested new ideas or approaches that have been implemented.
           - Leveraging agile practices from experience to manage the projects, displaying initiative and leadership in a startup setting.
 
-      - job: "Full-Stack Developer"
+      - job: "Full Stack Developer"
         company: "NitesOut"
         companyUrl: "https://www.nitesout.us/"
         date: "November 2023 - Present"
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
+        info:
+          enable: true
+          content: Working as a Full Stack Developer at NitesOut Entertainment.
         content: |
           - Working with a team to develop a mobile application for NitesOut, enhancing the user experience for nightlife enthusiasts.
           - Utilizing various programming languages and frameworks to create a user-friendly interface and efficient backend functionalities.
@@ -237,14 +240,14 @@ params:
         #  url: "https://example.com"
         info:
           enable: true
-          content: I worked as a Software Developer Intern for the 2023 Summer at Miles IT
+          content: Worked as a Software Developer Intern for the 2023 Summer at Miles IT
         content: |
           - Developed and implemented software features for clients using languages such as Java, Javascript, HTML/CSS
           -	Participated in agile development processes, including sprint planning and scrum meetings.
           - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
           - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, and Cloud Service Technology.
 
-      - job: "Genome Computing Researcher"
+      - job: "Genome Computing Project Manager & Researcher"
         company: "UMD FIRE"
         companyUrl: "https://www.fire.umd.edu/gc"
         date: "Aug 2022 - May 2023"
@@ -253,7 +256,7 @@ params:
         #  url: "https://example.com"
         info:
           enable: true
-          content: I conducted research on Genome Computing for more than one year at UMD FIRE.
+          content: Conducted research on Genome Computing for more than one year at UMD FIRE.
         content: |
           - Utilized command line and C++ for scientific computing, significantly accelerating data processing.
           - Analyzed and modeled complex genomic data using Python and R, leading to more accurate results by 10-15%.
