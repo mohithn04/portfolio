@@ -395,7 +395,7 @@ params:
           - icon: fa fa-envelope
             url: mailto:mohith.n2022@gmail.com?subject=Mohith's%20Portfolio%20and%20Perspective&body=Check%20it%20out:%20https://mohithn.netlify.app/blogs/
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys/portfolio
+            url: https://github.com/mohithn04/portfolio.git
       
       - title: Account Ownership Data Analysis
         content: Utilized R programming and data visualization techniques. Analyzed account ownership data for countries according to gender. Explored trends in Brazil, India, and the United States. Investigated ownership percentages for primary education or less and secondary education or more. Examined data for Chile, Serbia, Uganda, France, and Peru. Conducted statistical analysis and drew conclusions on account ownership trends.
@@ -405,7 +405,7 @@ params:
           - "R Notebooks"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
 
       - title: TaskMaster Application - Java-based To-Do List Application
         content: Engineered a clean and simple Java-based application with an intuitive UI for efficient task management. It includes a task sorting algorithm and a search function that utilizes regular expressions. The application is designed with robust error handling mechanisms and is currently being migrated to AWS for secure data storage and user authentication.
@@ -415,7 +415,7 @@ params:
           - "AWS"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
 
       - title: StocksEye - Real-time Stock Tracking Web Application
         content: This is a web application currently under development, designed to track stock prices and provide real-time updates. The frontend is being developed using React.js, Chart.js, and JavaScript. It integrates a financial data provider API for stock data retrieval and implements real-time updates for stock prices.
@@ -426,7 +426,7 @@ params:
           - "JavaScript"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
 
       - title: University Registration System
         content: Engineered a Java-based application for efficient course tracking and student registration at a university. The system is designed to streamline processes for over 1000 students. It includes concurrent programming techniques that enable multiple students to register for courses simultaneously, increasing system throughput by up to 50%.
@@ -435,7 +435,7 @@ params:
           - "Java"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
 
       - title: Modified Ribosome Simulation
         content: Developed a Python program simulating a modified ribosome's functionality for building amino acid chains from RNA sequences. Implemented five special commands, including START, STOP, DEL, EXCHANGE, and SWAP, to manipulate the protein building process. Created functions to read codon mappings and evaluation orders from files, encode RNA sequences, decode amino acid chains, and operate on RNA sequences based on evaluation rules. Utilized data structures to store codon mappings and evaluation orders, ensuring efficient processing. Tested the program against various sequences and evaluation orders to verify its accuracy and functionality
@@ -444,7 +444,7 @@ params:
           - "Python"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
       
       - title: Mad Raisin CPU
         content: Designed and implemented 10+ functions using bit operators and bit masking to extract and manipulate fields of MAD Raisin processor instructions. Developed functions to load and disassemble programs in memory. Increased understanding of hardware and assembly language concepts. Coded and maintained project using C on MobaXterm
@@ -454,7 +454,7 @@ params:
           - "Assembly"
         links:
           - icon: fab fa-github
-            url: https://github.com/Mohith-sys
+            url: https://github.com/mohithn04
 
   #Contact
   contact:
