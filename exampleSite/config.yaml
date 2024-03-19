@@ -85,9 +85,9 @@ params:
     textAlign: left # default: left
 
   # color preference
-  color:
-    textColor: brown
-  #   secondaryTextColor:
+    color:
+  #   textColor:
+      secondaryTextColor: darkbrown
   #   backgroundColor:
   #   secondaryBackgroundColor:
   #   primaryColor:
