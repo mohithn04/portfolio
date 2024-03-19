@@ -135,15 +135,16 @@ params:
       download: true
       newPage: true
     socialLinks:
-      customIcons:
+      fontAwesomeIcons:
         - icon: fab fa-github
-          url: https://github.com/Mohith-sys
-        - icon: /envelope.svg
-          url: mailto:mohith.n2022@gmail.com
+          url:  https://github.com/Mohith-sys
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/mohith-nagendra/
         - icon: fab fa-flipboard
           url: https://flipboard.com/@MohithNagendra?from=share&utm_source=flipboard&utm_medium=curator_share
+      customIcons:
+        - icon: /envelope.svg
+          url: mailto:mohith.n2022@gmail.com
         - icon: /mn.png
           url: "https://mohithn.netlify.app/blogs/"
         
