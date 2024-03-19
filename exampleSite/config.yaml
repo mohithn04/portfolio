@@ -56,7 +56,7 @@ params:
   title: "Mohith's Portfolio & Perspective"
   description: Check out my portfolio and blog!
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/mn.png"
+  favicon: "/mn-favicon-color.svg"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -145,7 +145,7 @@ params:
         - icon: fab fa-flipboard
           url: https://flipboard.com/@MohithNagendra?from=share&utm_source=flipboard&utm_medium=curator_share
       customIcons:
-        - icon: /mn.png
+        - icon: /mn-favicon-color.svg
           url: "https://mohithn.netlify.app/blogs/"
         
   # About
