@@ -136,13 +136,13 @@ params:
       newPage: true
     socialLinks:
       customIcons:
-        - icon: /github.svg
+        - icon: fab fa-github
           url: https://github.com/Mohith-sys
         - icon: /envelope.svg
           url: mailto:mohith.n2022@gmail.com
-        - icon: /linkedin.svg
+        - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/mohith-nagendra/
-        - icon: /flipboard.svg
+        - icon: fab fa-flipboard
           url: https://flipboard.com/@MohithNagendra?from=share&utm_source=flipboard&utm_medium=curator_share
         - icon: /mn.png
           url: "https://mohithn.netlify.app/blogs/"
