@@ -14,14 +14,13 @@
                 {{ .Site.Params.about.content | markdownify }}
 
                 {{ if .Site.Params.about.skills.enable }}
-                {{ .Site.Params.about.skills.title }}
-                <ul>
-                    {{ range .Site.Params.about.skills.items }}
-                    <li>
-                        <i class="{{ .icon }}"></i>  {{ .name | markdownify }}
-                    </li>
-                    {{ end }}
-                </ul>
+                    <h4>{{ .Site.Params.about.skills.title }}</h4>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        {{ range .Site.Params.about.skills.items }}
+                        <div class="skill-icon mx-3">
+                            <i class="{{ .icon }}"></i>  <p class="text-center mt-2">{{ .name }}</p> </div>
+                        {{ end }}
+                    </div>
                 {{ end }}
             </div>
         </div>
