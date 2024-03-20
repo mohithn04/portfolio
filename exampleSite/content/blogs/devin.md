@@ -7,7 +7,7 @@ tags:
   - Artificial Intelligence
   - Cognition Labs
 image: /images/devin.png
-description: ""
+description: "My take on the future of AI in Software Development"
 toc: true
 ---
 
@@ -15,19 +15,19 @@ Devin AI has taken the software development world by storm. This groundbreaking 
 
 Here's why I see Devin as an assistant, not a replacement:
 
-* Creativity and Problem-Solving: The core of computer science lies in tackling unique challenges and crafting elegant solutions.  This requires a level of creativity and critical thinking that AI currently struggles with. Devin can't replace the "aha!" moment that leads to a breakthrough solution.
+- Creativity and Problem-Solving: The core of computer science lies in tackling unique challenges and crafting elegant solutions.  This requires a level of creativity and critical thinking that AI currently struggles with. Devin can't replace the "aha!" moment that leads to a breakthrough solution.
 
-* Understanding Human Needs: Software development isn't just about code; it's about understanding user needs and translating them into a functional product. Devin might excel at coding a specific feature, but it can't grasp the nuances of user experience or translate complex business requirements into technical terms.
+- Understanding Human Needs: Software development isn't just about code; it's about understanding user needs and translating them into a functional product. Devin might excel at coding a specific feature, but it can't grasp the nuances of user experience or translate complex business requirements into technical terms.
 
 ## Where Devin Shines
 
 However, Devin brings incredible value to the table:
 
-* Speed and Efficiency: Repetitive coding tasks, bug fixes, and boilerplate code generation can be handled by Devin, freeing up programmers for higher-level strategic thinking and problem-solving.
+- Speed and Efficiency: Repetitive coding tasks, bug fixes, and boilerplate code generation can be handled by Devin, freeing up programmers for higher-level strategic thinking and problem-solving.
 
-* Increased Productivity: Imagine having an AI teammate that can handle the tedious aspects of development. This allows programmers to focus on what they do best: design, architecture, and creative problem-solving.
+- Increased Productivity: Imagine having an AI teammate that can handle the tedious aspects of development. This allows programmers to focus on what they do best: design, architecture, and creative problem-solving.
 
-* Reduced Errors:  Devin can potentially reduce human error in code, leading to more robust and reliable software.
+- Reduced Errors:  Devin can potentially reduce human error in code, leading to more robust and reliable software.
 
 ## The Future of Programmer-AI Collaboration
 
