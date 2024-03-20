@@ -166,22 +166,10 @@ params:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       items:
-        - "Java"
-        - "JavaScript"
-        - "C"
-        - "Python"
-        - "R"
-        - "OCaml"
-        - "Rust"
-        - "Racket"
-        - "SQL"
-        - "HTML"
-        - "CSS"
-        - "React"
-        - "APIs"
-        - "Git"
-        - "Jupyter Notebooks"
-        - "Anaconda"
+        - name: "Java"
+          icon: "fas fa-java"  # Font Awesome icon class for Java
+        - name: "JavaScript"
+          icon: "fas fa-square-js"
 
   # Skills
   skills:
