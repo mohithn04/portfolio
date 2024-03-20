@@ -50,6 +50,7 @@
 {{- end }}
 
 {{ if not (.Site.Params.navbar.disableSearch | default false) }}
+    <script src="{{ .Site.Params.staticPath }}/js/main.js"></script>
     <script src="{{ .Site.Params.staticPath }}/js/search.js"></script>
 {{ end }}
 
