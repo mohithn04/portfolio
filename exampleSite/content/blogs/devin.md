@@ -8,7 +8,7 @@ tags:
   - Cognition Labs
 image: /images/devin.png
 description: "My take on the future of AI in Software Development"
-toc: true
+toc: false
 ---
 
 Devin AI has taken the software development world by storm. This groundbreaking AI promises to act as a full-fledged software engineer, handling tasks from concept to code. While some fear it might replace human programmers, I believe Devin represents an exciting opportunity to supercharge our development workflows.
