@@ -1,3 +1,5 @@
+<script src="{{ .Site.Params.staticPath }}/js/main.js"></script>
+
 {{- if (eq .Site.Params.theme.defaultTheme "light") }}
 <script>
     if (document.body.className.includes("dark")) {
@@ -50,7 +52,6 @@
 {{- end }}
 
 {{ if not (.Site.Params.navbar.disableSearch | default false) }}
-    <script src="{{ .Site.Params.staticPath }}/js/main.js"></script>
     <script src="{{ .Site.Params.staticPath }}/js/search.js"></script>
 {{ end }}
 
