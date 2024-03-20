@@ -183,6 +183,10 @@ params:
         - "Jupyter Notebooks"
         - "Anaconda"
 
+  # Skills
+  skills:
+    enable: true
+
   # Experience
   experience:
     enable: true
