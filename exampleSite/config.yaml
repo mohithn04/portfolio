@@ -168,6 +168,8 @@ params:
       items:
         - name: "Java"
           icon: "fab fa-java"  # Font Awesome icon class for Java
+        - name: "Python"
+          icon: "fab fa-python"
         - name: "JavaScript"
           icon: "fab fa-square-js"
 
