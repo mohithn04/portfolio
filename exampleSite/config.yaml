@@ -167,9 +167,9 @@ params:
       title: "Here are a few technologies I've been working with recently:"
       items:
         - name: "Java"
-          icon: "fas fa-java"  # Font Awesome icon class for Java
+          icon: "fab fa-java"  # Font Awesome icon class for Java
         - name: "JavaScript"
-          icon: "fas fa-square-js"
+          icon: "fab fa-square-js"
 
   # Skills
   skills:
