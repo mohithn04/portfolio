@@ -180,6 +180,12 @@ params:
           icon: "fab fa-css3"
         - name: "Git"
           icon: "fab fa-git-alt"
+        - name: "GitHub"
+          icon: "fab fa-github"
+        - name: "Windows"
+          icon: "fab fa-windows"
+        - name: "Linux"
+          icon: "fab fa-linux"
 
   # Skills
   skills:
