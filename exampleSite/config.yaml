@@ -141,7 +141,7 @@ params:
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/mohith-nagendra/  
         - icon: fab fa-github
-          url:  https://github.com/Mohith-sys
+          url:  https://github.com/mohithn04
         - icon: fab fa-flipboard
           url: https://flipboard.com/@MohithNagendra?from=share&utm_source=flipboard&utm_medium=curator_share
       customIcons:
@@ -490,7 +490,7 @@ params:
       enable: true
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com/Mohith-sys
+      github: https://github.com/mohithn04
       linkedin: https://www.linkedin.com/in/mohith-nagendra/
       twitter: https://twitter.com
       instagram: https://instagram.com
