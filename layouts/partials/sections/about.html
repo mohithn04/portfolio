@@ -16,14 +16,14 @@
                 {{ if .Site.Params.about.skills.enable }}
                 <h5 class="text-center" style="padding-top: 20px;">{{ .Site.Params.about.skills.title }}</h5>
                     <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
-                        {{ range .Site.Params.about.skills.items }}
-                        <div class="skill-icon mx-3">
-                            <i class="{{ .icon }}" style="font-size: 5em;"></i>  <p class="text-center mt-2">{{ .name }}</p> </div>
-                        {{ end }}
                         {{ range .Site.Params.about.skills.customItems }}
                         <div class="skill-icon mx-3">
-                            <img src="{{ .icon }}">  <p class="text-center mt-2">{{ .name }}</p>
+                            <img src="{{ .icon }}" style="font-size: 5em;">  <p class="text-center mt-2">{{ .name }}</p>
                         </div>
+                        {{ end }}
+                        {{ range .Site.Params.about.skills.items }}
+                        <div class="skill-icon mx-3">
+                            <i class="{{ .icon }}" style="font-size: 5em; color: blue;"></i>  <p class="text-center mt-2">{{ .name }}</p> </div>
                         {{ end }}
                     </div>
                 {{ end }}
