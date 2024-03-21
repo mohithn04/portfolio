@@ -14,7 +14,7 @@
                 {{ .Site.Params.about.content | markdownify }}
 
                 {{ if .Site.Params.about.skills.enable }}
-                    <h6>{{ .Site.Params.about.skills.title }}</h6>
+                    <h5>{{ .Site.Params.about.skills.title }}</h5>
                     <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
                         {{ range .Site.Params.about.skills.items }}
                         <div class="skill-icon mx-3">
