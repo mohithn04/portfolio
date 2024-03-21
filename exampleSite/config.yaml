@@ -171,7 +171,7 @@ params:
         - name: "Python"
           icon: "fab fa-python"
         - name: "C"
-          icon: "/icons/c.svg"
+          icon: "/c.svg"
         - name: "JavaScript"
           icon: "fab fa-square-js"
         - name: "React.js"
