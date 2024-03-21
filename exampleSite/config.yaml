@@ -165,6 +165,9 @@ params:
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
+      customItems:
+        - name: "C"
+          icon: "/images/c.svg"
       items:
         - name: "Java"
           icon: "fab fa-java"  # Font Awesome icon class for Java
