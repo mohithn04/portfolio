@@ -18,12 +18,12 @@
                     <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
                         {{ range .Site.Params.about.skills.customItems }}
                         <div class="skill-icon mx-3">
-                            <img src="{{ .icon }}" style="width: 1.5em; height: 1.5em;">  <p class="text-center mt-2">{{ .name }}</p>
+                            <img src="{{ .icon }}" style="width: 4em; height: 1.5em;">  <p class="text-center mt-2">{{ .name }}</p>
                         </div>
                         {{ end }}
                         {{ range .Site.Params.about.skills.items }}
                         <div class="skill-icon mx-3">
-                            <i class="{{ .icon }}" style="font-size: 5em; color: #47aeff;"></i>  <p class="text-center mt-2">{{ .name }}</p> </div>
+                            <i class="{{ .icon }}" style="font-size: 5em;"></i>  <p class="text-center mt-2">{{ .name }}</p> </div>
                         {{ end }}
                     </div>
                 {{ end }}
