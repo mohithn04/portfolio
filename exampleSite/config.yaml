@@ -174,10 +174,12 @@ params:
           icon: "fab fa-square-js"
         - name: "React.js"
           icon: "fab fa-react"
-        - name: "HTML & CSS"
+        - name: "HTML"
           icon: "fab fa-html5"
+        - name: "CSS"
+          icon: "fab fa-css3"
         - name: "Git"
-          icon: "fab fa-git"
+          icon: "fab fa-git-alt"
 
   # Skills
   skills:
