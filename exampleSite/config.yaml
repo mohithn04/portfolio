@@ -179,6 +179,8 @@ params:
           icon: "fab fa-square-js"
         - name: "React.js"
           icon: "fab fa-react"
+        - name: "Rust"
+          icon: "fab fa-rust"
         - name: "HTML"
           icon: "fab fa-html5"
         - name: "CSS"
