@@ -198,7 +198,7 @@ params:
         - name: "OpenCV"
           icon: "fas fa-eye"
         - name: "ML"
-          icon: "fas fa-network-wired"
+          icon: "fas fa-brain"
 
   # Experience
   experience:
