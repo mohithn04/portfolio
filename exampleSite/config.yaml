@@ -166,8 +166,6 @@ params:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       customItems:
-        - name: "Computer Vision"
-          icon: "/images/cv.png"
         - name: "C"
           icon: "/images/C.svg"
         - name: "SQL"
@@ -197,6 +195,8 @@ params:
           icon: "fab fa-windows"
         - name: "Linux"
           icon: "fab fa-linux"
+        - name: "Computer Vision"
+          icon: "fas fa-eye"
 
   # Skills
   skills:
