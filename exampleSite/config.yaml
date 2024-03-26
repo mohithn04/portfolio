@@ -166,6 +166,8 @@ params:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       customItems:
+        - name: "Computer Vision"
+          icon: "/images/cv.png"
         - name: "C"
           icon: "/images/C.svg"
         - name: "SQL"
