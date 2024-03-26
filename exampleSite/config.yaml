@@ -197,6 +197,8 @@ params:
           icon: "fab fa-linux"
         - name: "OpenCV"
           icon: "fas fa-eye"
+        - name: "ML"
+          icon: "fas fa-network-wired"
 
   # Experience
   experience:
