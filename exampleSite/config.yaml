@@ -189,6 +189,8 @@ params:
           icon: "fab fa-git-alt"
         - name: "GitHub"
           icon: "fab fa-github"
+        - name: "Bootstrap"
+          icon: "fab fa-bootstrap"
         - name: "Windows"
           icon: "fab fa-windows"
         - name: "Linux"
