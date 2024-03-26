@@ -198,10 +198,6 @@ params:
         - name: "Computer Vision"
           icon: "fas fa-eye"
 
-  # Skills
-  skills:
-    enable: true
-
   # Experience
   experience:
     enable: true
