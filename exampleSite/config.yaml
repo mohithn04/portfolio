@@ -195,6 +195,8 @@ params:
           icon: "fab fa-windows"
         - name: "Linux"
           icon: "fab fa-linux"
+        - name: "OpenCV"
+          icon: "fas fa-eye"
 
   # Experience
   experience:
