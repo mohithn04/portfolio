@@ -9,7 +9,7 @@
                         <button class="btn btn-outline-secondary" id="prevExperience" type="button">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <ul class="nav nav-pills mb-3 bg-transparent primary-font flex-nowrap overflow-auto" id="pills-tab" role="tablist" style="white-space: nowrap;">
+                        <ul class="nav nav-pills mb-3 bg-transparent primary-font flex-nowrap overflow-auto custom-scrollbar" id="pills-tab" role="tablist" style="white-space: nowrap;">
                             {{ range $index, $element := .Site.Params.experience.items }}
                             {{ if (eq $index 0) }}
                             <li class="nav-item px-1 bg-transparent" role="presentation">
@@ -136,6 +136,26 @@
     </div>
 </section>
 {{ end }}
+
+<style>
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style>
 
 <script>
 document.getElementById('prevExperience').addEventListener('click', function() {
