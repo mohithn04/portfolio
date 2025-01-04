@@ -212,7 +212,11 @@ params:
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
-        #content: |
+        content: |
+          - Developing and maintaining software applications/products for Allergan Data Labs, focusing on data.
+          - Collaborating with cross-functional teams to design and implement software solutions that meet business requirements.
+          - Conducting code reviews, testing, and debugging to ensure the quality and reliability of software applications.
+          - Utilizing agile methodologies to manage projects and deliver software solutions on time and within budget.
           
       - job: "Machine Learning Intern"
         company: "Oracle"
