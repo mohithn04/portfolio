@@ -6,7 +6,7 @@
             <div class="col-sm-12 col-md-8 col-lg-8 py-5">
                 <div class="experience-container px-3 pt-2">
                     <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-outline-secondary" id="prevExperience" type="button">
+                        <button class="carousel-arrow" id="prevExperience" type="button">
                             <i class="fas fa-chevron-left"></i>
                         </button>
                         <ul class="nav nav-pills mb-3 bg-transparent primary-font flex-nowrap overflow-auto custom-scrollbar" id="pills-tab" role="tablist" style="white-space: nowrap;">
@@ -42,7 +42,7 @@
                             {{ end }}
                             {{ end }}
                         </ul>
-                        <button class="btn btn-outline-secondary" id="nextExperience" type="button">
+                        <button class="carousel-arrow" id="nextExperience" type="button">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -154,6 +154,22 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.carousel-arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.carousel-arrow i {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.carousel-arrow:hover i {
+    color: #555;
 }
 </style>
 

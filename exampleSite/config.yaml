@@ -123,7 +123,7 @@ params:
     intro: "Hi, my name is"
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
-    content: "As a Computer Science student on the Machine Learning track with a minor in Innovation & Entrepreneurship at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
+    content: "As a Senior year Computer Science student on the Machine Learning track with a minor in Innovation & Entrepreneurship at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
     image: /images/Mohith-Grad.jpg
     bottomImage:
       enable: true
