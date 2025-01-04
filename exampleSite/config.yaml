@@ -235,7 +235,7 @@ params:
         #  enable: true
         #  url: "https://example.com"
         content: |
-          - Spearheaded the development of a "Total Rewards Reminder" email campaign in Alle, reaching 6.5 million users.
+          - Spearheaded the development of a Total Rewards Reminder email campaign in Alle, reaching 6.5 million users.
           - Engineered responsive email templates using MJML/HTML, ensuring cross-platform compatibility through testing on Litmus.
           - Collaborated with engineering teams to manage and troubleshoot email delivery and audience retrieval on Datadog and AWS.
 
