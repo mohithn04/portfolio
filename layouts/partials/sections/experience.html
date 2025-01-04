@@ -138,32 +138,18 @@
 {{ end }}
 
 <style>
-.custom-scrollbar {
-    overflow: hidden;
-}
-
-.custom-scrollbar:hover {
-    overflow: auto;
-}
-
 .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.custom-scrollbar:hover::-webkit-scrollbar {
-    opacity: 1;
+    width: 3px;
+    height: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f1f1af;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 3px;
+    border-radius: 1px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
