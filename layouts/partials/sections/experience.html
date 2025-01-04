@@ -5,39 +5,47 @@
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-8 col-lg-8 py-5">
                 <div class="experience-container px-3 pt-2">
-                    <ul class="nav nav-pills mb-3 bg-transparent primary-font" id="pills-tab" role="tablist">
-                        {{ range $index, $element := .Site.Params.experience.items }}
-                        {{ if (eq $index 0) }}
-                        <li class="nav-item px-1 bg-transparent" role="presentation">
-                            <div 
-                                class="nav-link active bg-transparent" 
-                                aria-selected="true" 
-                                role="tab" 
-                                data-bs-toggle="pill"
-                                id='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
-                                data-bs-target='#pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
-                                aria-controls='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}' 
-                            >
-                                {{ .company }}
-                            </div>
-                        </li>
-                        {{ else }}
-                        <li class="nav-item px-1 bg-transparent" role="presentation">
-                            <div 
-                                class="nav-link bg-transparent" 
-                                aria-selected="true" 
-                                role="tab" 
-                                data-bs-toggle="pill"
-                                id='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
-                                data-bs-target='#pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}' 
-                                aria-controls='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
-                            >
-                                {{ .company }}
-                            </div>
-                        </li>
-                        {{ end }}
-                        {{ end }}
-                    </ul>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-outline-secondary" id="prevExperience" type="button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <ul class="nav nav-pills mb-3 bg-transparent primary-font flex-nowrap overflow-auto" id="pills-tab" role="tablist" style="white-space: nowrap;">
+                            {{ range $index, $element := .Site.Params.experience.items }}
+                            {{ if (eq $index 0) }}
+                            <li class="nav-item px-1 bg-transparent" role="presentation">
+                                <div 
+                                    class="nav-link active bg-transparent" 
+                                    aria-selected="true" 
+                                    role="tab" 
+                                    data-bs-toggle="pill"
+                                    id='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
+                                    data-bs-target='#pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
+                                    aria-controls='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}' 
+                                >
+                                    {{ .company }}
+                                </div>
+                            </li>
+                            {{ else }}
+                            <li class="nav-item px-1 bg-transparent" role="presentation">
+                                <div 
+                                    class="nav-link bg-transparent" 
+                                    aria-selected="true" 
+                                    role="tab" 
+                                    data-bs-toggle="pill"
+                                    id='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
+                                    data-bs-target='#pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}' 
+                                    aria-controls='{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
+                                >
+                                    {{ .company }}
+                                </div>
+                            </li>
+                            {{ end }}
+                            {{ end }}
+                        </ul>
+                        <button class="btn btn-outline-secondary" id="nextExperience" type="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                     <div class="tab-content pb-5 pt-2 bg-transparent primary-font" id="pills-tabContent">
                         {{ range $index, $element := .Site.Params.experience.items }}
                         {{ if (eq $index 0) }}
@@ -128,3 +136,13 @@
     </div>
 </section>
 {{ end }}
+
+<script>
+document.getElementById('prevExperience').addEventListener('click', function() {
+    document.getElementById('pills-tab').scrollBy({ left: -200, behavior: 'smooth' });
+});
+
+document.getElementById('nextExperience').addEventListener('click', function() {
+    document.getElementById('pills-tab').scrollBy({ left: 200, behavior: 'smooth' });
+});
+</script>
