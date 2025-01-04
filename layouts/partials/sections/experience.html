@@ -55,7 +55,7 @@
                             id='pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
                             aria-labelledby='pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
                         >
-                            <div>
+                            <div class="experience-details pl-3"> <!-- Added class for padding -->
                                 <span class="h4">{{ .job }}</span>
                                 <small>-</small>
                                 <a href="{{ .companyUrl }}" target="_blank">{{ .company }}</a>
@@ -93,7 +93,7 @@
                             id='pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}'
                             aria-labelledby='pills-{{ replace .company " " "-" }}-{{ replace .date " " "-" }}-tab'
                         >
-                            <div>
+                            <div class="experience-details pl-3"> <!-- Added class for padding -->
                                 <span class="h4">{{ .job }}</span>
                                 <small>-</small>
                                 <a href="{{ .companyUrl }}" target="_blank">{{ .company }}</a>
@@ -167,6 +167,10 @@
 
 .carousel-arrow:focus {
     outline: none;
+}
+
+.experience-details {
+    padding-left: 10px;
 }
 </style>
 
