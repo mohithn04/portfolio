@@ -228,7 +228,7 @@ params:
           - Implemented an LLM to streamline ticket resolution processes for both internal operations and client-facing applications.
 
       - job: "Software Engineer Intern"
-        company: "Allergan Data Labs (Abbvie)"
+        company: "Allergan Data Labs"
         companyUrl: "https://www.allergandatalabs.com/"
         date: "May - August 2024"
         #featuredLink:
