@@ -205,18 +205,39 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - job: "Innovation & Software Development Intern"
-        company: "Airweb Digital"
-        companyUrl: "https://www.airwebdigital.com/"
-        date: "November 2023 - Present"
+      - job: "Software Engineer I"
+        company: "Allergan Data Labs (Abbvie)"
+        companyUrl: "https://www.allergandatalabs.com/"
+        date: "September 2024 - Present"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        #content: |
+          
+      - job: "Machine Learning Intern"
+        company: "Oracle"
+        companyUrl: "https://www.oracle.com/"
+        date: "June - September 2024"
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
         content: |
-          - Independently developing an AI-based Attention Analysis feature using machine learning libraries such as TensorFlow or PyTorch. This feature is optimizing a specific type of advertising (billboards), and has led to significant improvements in advertising effectiveness.
-          - Leading the creation of a viewshed analysis deliverable for visibility ranking using drone data, leveraging GIS (Geographic Information System) technologies such as QGIS. This analysis is will be used to identify optimal locations for new advertisements and analyze the effectiveness of existing ad placements.
-          - Working directly with the CEO and consulting with company partners to align the projects with the company's strategic goals. Contributed to key decisions and strategies, and suggested new ideas or approaches that have been implemented.
-          - Leveraging agile practices from experience to manage the projects, displaying initiative and leadership in a startup setting.
+          - Researched fraudulent transactions detection ML models that use Graph Neural Network, graph2vec, PyG, and NetworkX.
+          - Designed and deployed OCI Environment & Autonomous Database for ML model training data management.
+          - Performed exploratory data analysis (EDA) and feature engineering on ADS-B data, training an ML model to predict flight ETAs.
+          - Implemented an LLM to streamline ticket resolution processes for both internal operations and client-facing applications.
+
+      - job: "Software Engineer Intern"
+        company: "Allergan Data Labs (Abbvie)"
+        companyUrl: "https://www.allergandatalabs.com/"
+        date: "May - August 2024"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Spearheaded the development of a "Total Rewards Reminder" email campaign in Alle, reaching 6.5 million users.
+          - Engineered responsive email templates using MJML/HTML, ensuring cross-platform compatibility through testing on Litmus.
+          - Collaborated with engineering teams to manage and troubleshoot email delivery and audience retrieval on Datadog and AWS.
 
       - job: "Full Stack Developer"
         company: "NitesOut"
@@ -235,10 +256,23 @@ params:
           - Implementing features such as event discovery, ticket purchasing, and social interaction to provide a comprehensive platform for users.
           - Conducting thorough testing to identify and fix bugs, ensuring a smooth and reliable user experience.
 
+      - job: "Innovation & Software Development Intern"
+        company: "Airweb Digital"
+        companyUrl: "https://www.airwebdigital.com/"
+        date: "November 2023 - May 2024"
+        #featuredLink:
+        #  enable: true
+        #  url: "https://example.com"
+        content: |
+          - Independently developing an AI-based Attention Analysis feature using machine learning libraries such as TensorFlow or PyTorch. This feature is optimizing a specific type of advertising (billboards), and has led to significant improvements in advertising effectiveness.
+          - Leading the creation of a viewshed analysis deliverable for visibility ranking using drone data, leveraging GIS (Geographic Information System) technologies such as QGIS. This analysis is will be used to identify optimal locations for new advertisements and analyze the effectiveness of existing ad placements.
+          - Working directly with the CEO and consulting with company partners to align the projects with the company's strategic goals. Contributed to key decisions and strategies, and suggested new ideas or approaches that have been implemented.
+          - Leveraging agile practices from experience to manage the projects, displaying initiative and leadership in a startup setting.
+
       - job: "Full Stack Developer"
         company: "Break Through Tech"
         companyUrl: "https://www.breakthroughtech.org/in-the-news/"
-        date: "December 2023 - Present"
+        date: "December 2023 - March 2024"
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
@@ -334,7 +368,7 @@ params:
           name: "University of Maryland - College Park"
           url: "https://www.cs.umd.edu/"
         date: "2022 - 2025"
-        GPA: "Currently 3.6 out of 4.0"
+        GPA: "Currently 3.72 out of 4.0"
         content: |-          
           Minor: Innovation & Entrepreneurship (Robert H. Smith School of Business)
           
