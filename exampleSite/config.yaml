@@ -206,7 +206,7 @@ params:
     # title: "Custom Name"
     items:
       - job: "Software Engineer I"
-        company: "Allergan Data Labs (Abbvie)"
+        company: "Allergan Data Labs \(Abbvie\)"
         companyUrl: "https://www.allergandatalabs.com/"
         date: "September 2024 - Present"
         #featuredLink:
