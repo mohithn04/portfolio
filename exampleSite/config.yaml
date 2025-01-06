@@ -177,7 +177,7 @@ params:
         icon: "fab fa-python"
       - name: "JavaScript"
         icon: "fab fa-square-js"
-      - name: "Go"
+      - name: "Golang"
         icon: "fab fa-golang"
       - name: "Rust"
         icon: "fab fa-rust"
@@ -200,7 +200,7 @@ params:
       - name: "Linux"
         icon: "fab fa-linux"
     ml:
-      - name: |
+      - name: >
           Tailwind
           CSS
         icon: "/images/tailwind.svg"
