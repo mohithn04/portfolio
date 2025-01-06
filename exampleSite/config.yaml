@@ -170,8 +170,8 @@ params:
         icon: "/images/C.svg"
       - name: "SQL"
         icon: "/images/sql.svg"
-      - name: "PyTorch"
-        icon: "/images/pytorch.svg"
+      #- name: "PyTorch"
+      #  icon: "/images/pytorch.svg"
     items:
       - name: "Java"
         icon: "fab fa-java"
