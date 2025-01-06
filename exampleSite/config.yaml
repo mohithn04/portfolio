@@ -209,7 +209,7 @@ params:
         icon: "fas fa-brain"
     ml:
       - name: "PyTorch"
-        icon: "pytorch.svg"
+        icon: "/images/pytorch.svg"
 
   # Experience
   experience:

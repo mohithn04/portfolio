@@ -17,14 +17,7 @@
       {{ end }}
       {{ range .Site.Params.skills.ml }}
       <div class="skill-icon mx-3">
-        {{ $iconPath := printf "images/%s.svg" .icon }}
-        {{ with readFile $iconPath }}
-        <div style="width: 5em; height: 5em;">
-          <div style="fill: var(--icon-color);">
-            {{ . | safeHTML }}
-          </div>
-        </div>
-        {{ end }}
+        <div class="svg-container" data-icon="{{ .icon }}" style="width: 5em; height: 5em;"></div>
         <p class="text-center mt-2">{{ .name }}</p>
       </div>
       {{ end }}
