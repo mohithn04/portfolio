@@ -115,3 +115,23 @@
     });
 </script>
 <script src="{{ .Site.Params.staticPath }}/js/load-svgs.js"></script>
+<!-- Animate on scroll -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        function checkPosition() {
+            const windowHeight = window.innerHeight;
+            elements.forEach(element => {
+                const positionFromTop = element.getBoundingClientRect().top;
+                if (positionFromTop - windowHeight <= 0) {
+                    element.classList.add(element.dataset.animation);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+        checkPosition();
+    });
+</script>

@@ -72,6 +72,36 @@
   }
 }
 
+@keyframes move-away {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 56%, 0) scale(1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes move-away-bottom {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -44%, 0) scale(1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        opacity: 1;
+    }
+}
+
+.animate-move-away {
+    animation: move-away 1s ease-out forwards;
+}
+
+.animate-move-away-bottom {
+    animation: move-away-bottom 1s ease-out forwards;
+}
+
 header .navbar.animate {
     animation: fade-up 0.5s ease-in;
 }
