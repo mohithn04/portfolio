@@ -1,3 +1,7 @@
+:root {
+    --icon-color: #e4e6eb; /* Default color */
+}
+
 /* light mode */
 .light > *{
     background-color: var(--background-color) !important;
