@@ -5,7 +5,7 @@
     display: inline-block;
     width: 2px;
     height: 1em; /* Adjust the height to match the font size */
-    background-color: rgb(255, 255, 255); /* Adjust the color as needed */
+    background-color: var(--text-color); /* Adjust the color as needed */
     margin-left: 2px;
     animation: blink 0.7s infinite;
     vertical-align: bottom; /* Align the cursor with the text */
