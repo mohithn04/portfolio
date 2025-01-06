@@ -4,19 +4,19 @@
     <h5 class="text-center" style="padding-top: 5px;">{{ .Site.Params.skills.title }}</h5>
     <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
       {{ range .Site.Params.skills.customItems }}
-      <div class="skill-icon mx-3" style="padding-top: 5px;">
+      <div class="skill-icon mx-3" style="padding-top: 10px;">
         <img src="{{ .icon }}" style="width: 5em; height: 5em;">
         <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
       {{ end }}
       {{ range .Site.Params.skills.items }}
-      <div class="skill-icon mx-3" style="padding-top: 5px;">
+      <div class="skill-icon mx-3" style="padding-top: 10px;">
         <i class="{{ .icon }}" style="font-size: 5em;"></i>
         <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
       {{ end }}
       {{ range .Site.Params.skills.ml }}
-      <div class="skill-icon mx-3" style="padding-top: 5px;">
+      <div class="skill-icon mx-3" style="padding-top: 10px;">
         <div class="svg-container" data-icon="{{ .icon }}" style="width: 5em; height: 5em;"></div>
         <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
