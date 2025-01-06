@@ -1,5 +1,5 @@
-/* light mode */the
-.light > * {
+/* light mode */
+.light > *{
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
 }
@@ -12,7 +12,6 @@
     --text-secondary-color: var(--text-secondary-color-dark) !important;
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
-    --icon-color: var(--text-color-dark) !important;
 }
 
 .text-secondary {
