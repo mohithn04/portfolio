@@ -40,7 +40,7 @@
 }
 @keyframes fade-left {
   0% {
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     opacity: 0;
   }
   100% {
@@ -63,7 +63,7 @@
 /* Header animation */
 @keyframes fade-up {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
@@ -97,7 +97,7 @@ header .navbar.animate {
     max-width: 100%;
 }
 #hero .content.animate {
-    animation: fade-left 1s ease-out;
+    animation: fade-left 1s ease-out forwards;
 }
 
 #hero .hero-bottom-svg {
@@ -137,7 +137,7 @@ header .navbar.animate {
 }
 
 #hero .image.animate img {
-    animation: fade-in 1s ease-out;
+    animation: fade-in 1s ease-out forwards;
     transition: box-shadow 0.3s;
 }
 
