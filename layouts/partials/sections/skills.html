@@ -1,18 +1,21 @@
-{{ if .Site.Params.skills.enable }}
+{{ if .Site.Params.about.skills.enable | default false }}
 <section id="skills" class="py-0 py-sm-5">
-    <div class="container bg-transparent">
-        <h5 class="text-center" style="padding-top: 20px;">{{ .Site.Params.skills.title }}</h5>
-        <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
-            {{ range .Site.Params.skills.customItems }}
-            <div class="skill-icon mx-3">
-                <img src="{{ .icon }}" style="width: 5em; height: 5em;">  <p class="text-center mt-2">{{ .name }}</p>
-            </div>
-            {{ end }}
-            {{ range .Site.Params.skills.items }}
-            <div class="skill-icon mx-3">
-                <i class="{{ .icon }}" style="font-size: 5em;"></i> <p class="text-center mt-2">{{ .name }}</p> </div>
-            {{ end }}
-        </div>
+  <div class="container bg-transparent">
+    <h5 class="text-center" style="padding-top: 20px;">{{ .Site.Params.about.skills.title }}</h5>
+    <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
+      {{ range .Site.Params.about.skills.customItems }}
+      <div class="skill-icon mx-3">
+        <img src="{{ .icon }}" style="width: 5em; height: 5em;">
+        <p class="text-center mt-2">{{ .name }}</p>
+      </div>
+      {{ end }}
+      {{ range .Site.Params.about.skills.items }}
+      <div class="skill-icon mx-3">
+        <i class="{{ .icon }}" style="font-size: 5em;"></i>
+        <p class="text-center mt-2">{{ .name }}</p>
+      </div>
+      {{ end }}
     </div>
+  </div>
 </section>
 {{ end }}
