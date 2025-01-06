@@ -14,7 +14,7 @@
                 {{ .Site.Params.about.content | markdownify }}
 
                 {{ if .Site.Params.about.skills.enable }}
-                <h5 class="centered-title" style="padding-top: 20px;">{{ .Site.Params.about.skills.title }}</h5>
+                <h5 class="text-center" style="padding-top: 20px;">{{ .Site.Params.about.skills.title }}</h5>
                     <div class="d-flex flex-wrap justify-content-center" style="padding-top: 20px;">
                         {{ range .Site.Params.about.skills.customItems }}
                         <div class="skill-icon mx-3">
@@ -32,10 +32,3 @@
     </div>
 </section>
 {{ end }}
-
-<style>
-.centered-title {
-    text-align: center;
-    width: 100%;
-}
-</style>
