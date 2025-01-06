@@ -1,4 +1,21 @@
 /* Animation */
+
+/* Blinking cursor */
+#cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;

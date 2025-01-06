@@ -93,15 +93,24 @@
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}
 
-<!-- Typed.js -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<!-- Custom Typed Effect -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var typed = new Typed('#typed-title', {
-            strings: ["{{ .Site.Params.hero.title }}"],
-            typeSpeed: 25,
-            backSpeed: 25,
-            loop: false
-        });
+        const text = "{{ .Site.Params.hero.title }}";
+        const typedTitle = document.getElementById('typed-title');
+        const cursor = document.getElementById('cursor');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typedTitle.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Adjust typing speed here
+            } else {
+                cursor.style.display = 'none'; // Hide cursor after typing is done
+            }
+        }
+
+        type();
     });
 </script>
