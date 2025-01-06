@@ -6,19 +6,19 @@
       {{ range .Site.Params.skills.customItems }}
       <div class="skill-icon mx-3">
         <img src="{{ .icon }}" style="width: 5em; height: 5em;">
-        <p class="text-center mt-2">{{ .name }}</p>
+        <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
       {{ end }}
       {{ range .Site.Params.skills.items }}
       <div class="skill-icon mx-3">
         <i class="{{ .icon }}" style="font-size: 5em;"></i>
-        <p class="text-center mt-2">{{ .name }}</p>
+        <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
       {{ end }}
       {{ range .Site.Params.skills.ml }}
       <div class="skill-icon mx-3">
         <div class="svg-container" data-icon="{{ .icon }}" style="width: 5em; height: 5em;"></div>
-        <p class="text-center mt-2">{{ .name }}</p>
+        <p class="text-center mt-2" style="white-space: pre-wrap;">{{ .name }}</p>
       </div>
       {{ end }}
     </div>
