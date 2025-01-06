@@ -174,7 +174,7 @@ params:
         icon: "/images/pytorch.svg"
     items:
       - name: "Java"
-        icon: "fab fa-java"  # Font Awesome icon class for Java
+        icon: "fab fa-java"
       - name: "Python"
         icon: "fab fa-python"
       - name: "JavaScript"
