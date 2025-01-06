@@ -200,7 +200,9 @@ params:
       - name: "Linux"
         icon: "fab fa-linux"
     ml:
-      - name: "Tailwind\nCSS"
+      - name: |
+          Tailwind
+          CSS
         icon: "/images/tailwind.svg"
       - name: "PyTorch"
         icon: "/images/pytorch.svg"
