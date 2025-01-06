@@ -7,7 +7,7 @@
                     {{ .Site.Params.hero.intro }}
                 </span>
                 <h2>
-                    {{ .Site.Params.hero.title }}
+                    <span id="typed-title"></span>
                 </h2>
                 <h3>
                     {{ .Site.Params.hero.subtitle }}
@@ -308,4 +308,14 @@
     </div>
     {{ end }}
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var typed = new Typed('#typed-title', {
+            strings: ["{{ .Site.Params.hero.title }}"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: false
+        });
+    });
+</script>
 {{ end }}

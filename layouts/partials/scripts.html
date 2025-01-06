@@ -92,3 +92,16 @@
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}
+
+<!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var typed = new Typed('#typed-title', {
+            strings: ["{{ .Site.Params.hero.title }}"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: false
+        });
+    });
+</script>
