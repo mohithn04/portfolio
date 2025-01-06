@@ -205,11 +205,11 @@ params:
         icon: "fab fa-linux"
       - name: "OpenCV"
         icon: "fas fa-eye"
-      - name: "ML"
-        icon: "fas fa-brain"
     ml:
       - name: "PyTorch"
         icon: "/images/pytorch.svg"
+      - name: "Pandas"
+        icon: "/images/pandas.svg"
 
   # Experience
   experience:
