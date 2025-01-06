@@ -197,19 +197,19 @@ params:
         icon: "fab fa-react"
       - name: "Node.js"
         icon: "fab fa-node"
-      - name: "Bootstrap"
-        icon: "fab fa-bootstrap"
-      - name: "Windows"
-        icon: "fab fa-windows"
       - name: "Linux"
         icon: "fab fa-linux"
-      - name: "OpenCV"
-        icon: "fas fa-eye"
     ml:
+      - name: "Tailwind CSS"
+        icon: "/images/tailwind.svg"
       - name: "PyTorch"
         icon: "/images/pytorch.svg"
       - name: "Pandas"
         icon: "/images/pandas.svg"
+      - name: "NumPy"
+        icon: "/images/numpy.svg"
+      - name: "OpenCV"
+        icon: "/images/opencv.svg"
 
   # Experience
   experience:
