@@ -164,7 +164,7 @@ params:
 
   skills:
     enable: true
-    title: "Here are a few technologies I've been working with recently:"
+    title: "A few technologies I've been working with recently:"
     customItems:
       - name: "C"
         icon: "/images/C.svg"
