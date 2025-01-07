@@ -640,7 +640,7 @@ header .navbar.animate {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out;
+    transition: transform 0.05s ease-out;
 }
 
 .product-animation-layer.top {
@@ -653,4 +653,10 @@ header .navbar.animate {
 
 .product-animation-layer.bottom {
     z-index: 1;
+}
+
+.product-animation-svg {
+    width: 120%;
+    height: 120%;
+    padding: 0.2rem;
 }
