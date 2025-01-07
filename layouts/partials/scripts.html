@@ -126,8 +126,8 @@
             const scrollY = window.scrollY;
             const windowHeight = window.innerHeight;
 
-            const topTransform = Math.min(scrollY / windowHeight * 56, 56);
-            const bottomTransform = Math.min(scrollY / windowHeight * -44, -44);
+            const topTransform = scrollY / windowHeight * 56;
+            const bottomTransform = scrollY / windowHeight * -44;
 
             topLayer.style.transform = `translate(-50%, calc(-50% + ${topTransform}%))`;
             middleLayer.style.transform = `translate(-50%, -50%)`;
