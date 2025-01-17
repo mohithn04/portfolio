@@ -1,5 +1,5 @@
 {{ if .Site.Params.hero.enable | default false }}
-<section id="hero" class="align-middle">
+<section id="hero" class="py-5 align-middle">
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
@@ -44,7 +44,7 @@
         </div>
     </div>
     {{ if .Site.Params.hero.bottomImage.enable | default true }}
-    <div class="hero-bottom-svg d-md-block d-lg-block d-none">
+    <div class="hero-bottom-svg d-md-block d-lg-block d-none" style="margin: 0; padding: 0;">
         <svg xmlns="http://www.w3.org/2000/svg" width="201" height="201" viewBox="0 0 201 201">
             <g id="Group_1168" data-name="Group 1168" transform="translate(-384 -1392)">
                 <rect id="Rectangle_2206" data-name="Rectangle 2206" width="12" height="2" rx="1"
