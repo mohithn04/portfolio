@@ -118,22 +118,20 @@
 <!-- Animate on scroll -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const elements = document.querySelectorAll('.animate-on-scroll');
+        const topLayer = document.querySelector('.product-animation-layer.top');
+        const middleLayer = document.querySelector('.product-animation-layer.middle');
+        const bottomLayer = document.querySelector('.product-animation-layer.bottom');
 
         function updateTransforms() {
             const scrollY = window.scrollY;
             const windowHeight = window.innerHeight;
 
-            elements.forEach(element => {
-                const topTransform = scrollY / windowHeight * 56;
-                const bottomTransform = scrollY / windowHeight * -44;
+            const topTransform = scrollY / windowHeight * 56;
+            const bottomTransform = scrollY / windowHeight * -44;
 
-                if (element.classList.contains('top')) {
-                    element.style.transform = `translate(-50%, calc(-50% + ${topTransform}%))`;
-                } else if (element.classList.contains('bottom')) {
-                    element.style.transform = `translate(-50%, calc(-50% + ${bottomTransform}%))`;
-                }
-            });
+            topLayer.style.transform = `translate(-50%, calc(-50% + ${topTransform}%))`;
+            middleLayer.style.transform = `translate(-50%, -50%)`;
+            bottomLayer.style.transform = `translate(-50%, calc(-50% + ${bottomTransform}%))`;
         }
 
         window.addEventListener('scroll', updateTransforms);
