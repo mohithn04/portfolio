@@ -476,7 +476,22 @@ params:
             url: mailto:mohith.n2022@gmail.com?subject=Mohith's%20Portfolio%20and%20Perspective&body=Check%20it%20out:%20https://mohithn.netlify.app/blogs/
           - icon: fab fa-github
             url: https://github.com/mohithn04/portfolio.git
-      
+
+      - title: 2024 Crime in Los Angeles Analysis
+        content: This project analyzes 2024 crime data in Los Angeles to uncover trends and correlations between crime occurrences, victim demographics, and location. Using statistical methods (Chi-Squared, ANOVA) and machine learning (Logistic Regression), it predicts victim gender and identifies high-risk areas and times. The goal is to provide actionable insights for improving community safety and informing data-driven strategies.
+        image: /images/projects/la.jpg
+        badges:
+          - "Python"
+          - "Pandas"
+          - "NumPy"
+          - "SciPy"
+          - "Matplotlib"
+          - "Scikit-learn"
+          - "Seaborn"
+        links:
+          - icon: fab fa-github
+            url: https://mohithn04.github.io/
+
       - title: Account Ownership Data Analysis
         content: Utilized R programming and data visualization techniques. Analyzed account ownership data for countries according to gender. Explored trends in Brazil, India, and the United States. Investigated ownership percentages for primary education or less and secondary education or more. Examined data for Chile, Serbia, Uganda, France, and Peru. Conducted statistical analysis and drew conclusions on account ownership trends.
         image: /images/projects/acct.png
