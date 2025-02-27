@@ -445,7 +445,7 @@ params:
     # title: "Custom Name"
     items:
       - title: ACME Case Study
-        content: This project is a multi-level sales forecasting platform for Acme. It uses a synthetic dataset that incorporates realistic market constraints across Portfolio, Geography, Category, Brand, and Segment levels, enabling scenario-based optimization for sales and margins over a multi-year period.
+        content: This project is a sales forecasting and optimization platform for Acme. It leverages a synthetic dataset that models Acme’s hierarchical structure—Portfolio, Geography, Category, Brand, and Segment—with realistic market constraints at each level. The algorithm runs multiple scenarios, including maximizing sales, maximizing margins, and achieving specific sales or margin targets, while projecting outcomes over a five-year period. This structured approach provides clear, actionable insights to help leadership set realistic growth expectations and strategic priorities.
         image: /images/projects/Acme Company Structure, Inputs & Constraint.png
         badges:
           - "Python"
@@ -457,6 +457,7 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/mohithn04/case-study-ACME.git
+      
       - title: Mohith's Portfolio & Perspective
         content: A personal portfolio and blog website that I created using Hugo and hosted on Netlify. The website is built with HTML, CSS, Bootstrap, and JavaScript, demonstrating my proficiency in these languages and my ability to create a user-friendly and responsive web design. The blog section of the website serves as a platform for me to share my insights and experiences in the field of computer science, particularly in machine learning, data analytics and innovation. This project not only showcases my technical skills but also my passion for sharing knowledge and engaging with the tech community.
         image: /images/projects/NH.jpg
