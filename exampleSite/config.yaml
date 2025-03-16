@@ -12,7 +12,8 @@ outputs:
     - "HTML"
     - "RSS"
 
-Paginate: 3
+pagination:
+  pagerSize: 3
 enableRobotsTXT: true
 disqusShortname: portfolio-bf44qbzkws
 # googleAnalytics: G-MEASUREMENT_ID
