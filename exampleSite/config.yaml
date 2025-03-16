@@ -436,6 +436,7 @@ params:
       - title: Oracle Cloud Infrastructure Associate, OCI AI Associate, OCI Kubernetes Engine Specialist
         content: Completed the Oracle Cloud Infrastructure Foundations Associate, OCI AI Associate, and OCI Kubernetes Engine Specialist certifications, demonstrating proficiency in cloud computing, AI, and container orchestration.
         url: https://catalog-education.oracle.com/ords/certview/sharebadge?id=6B4F6F6A072B7722367E1F69DEBA5AFD8144264782F42B2144E7B9AF0E87CB50
+        image: /images/oci.png
       - title: Split Advanced Feature Flagging Level 1 & 2
         content: Completed the Split Advanced Feature Flagging for Engineers course, demonstrating expertise in advanced feature flagging techniques and best practices.
         image: /images/advanced_feature_flagging_for_engineers.png
