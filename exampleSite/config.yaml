@@ -201,7 +201,7 @@ params:
       - name: "Linux"
         icon: "fab fa-linux"
       - name: "Shell Scripting"
-        icon: "fat fa-terminal"
+        icon: "fas fa-terminal"
     ml:
       - name: "Tailwind\nCSS"
         icon: "/images/tailwind.svg"
