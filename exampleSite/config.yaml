@@ -68,7 +68,7 @@ params:
   # This requires your images to be uploaded + hosted on Cloudinary
   # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
   # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
-  
+
   # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
   mathjax: false
 
@@ -132,15 +132,15 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing"
-      download: true
-      newPage: true
+      url: "/resume-download/"
+      download: false
+      newPage: false
     socialLinks:
       fontAwesomeIcons:
         - icon: fas fa-envelope
           url: mailto:mohith.n2022@gmail.com
         - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/mohith-nagendra/  
+          url: https://www.linkedin.com/in/mohith-nagendra/
         - icon: fab fa-github
           url:  https://github.com/mohithn04
         - icon: fab fa-flipboard
@@ -148,7 +148,7 @@ params:
       customIcons:
         - icon: /mn.png
           url: "https://mohithn.netlify.app/blogs/"
-        
+
   # About
   about:
     enable: true
@@ -161,7 +161,7 @@ params:
 
       I am currently working on a project that will be used to help enhance the user experience for nightlife enthusiasts.
 
-      Feel free to check out [**my blog**](https://mohithn.netlify.app/blogs/) or browse my portfolio to see some of the projects I've worked on. If you'd like to get in touch, don't hesitate to contact me. I'm always open to new opportunities and collaborations. 
+      Feel free to check out [**my blog**](https://mohithn.netlify.app/blogs/) or browse my portfolio to see some of the projects I've worked on. If you'd like to get in touch, don't hesitate to contact me. I'm always open to new opportunities and collaborations.
 
   skills:
     enable: true
@@ -231,7 +231,7 @@ params:
           - Collaborating with cross-functional teams to design and implement software solutions that meet business requirements.
           - Conducting code reviews, testing, and debugging to ensure the quality and reliability of software applications.
           - Utilizing agile methodologies to manage projects and deliver software solutions on time and within budget.
-          
+
       - job: "Software Engineer Intern"
         company: "Oracle"
         companyUrl: "https://www.oracle.com/"
@@ -387,11 +387,11 @@ params:
           url: "https://www.cs.umd.edu/"
         date: "2022 - 2025"
         GPA: "Currently 3.72 out of 4.0"
-        content: |-          
+        content: |-
           Minor: Innovation & Entrepreneurship (Robert H. Smith School of Business)
-          
+
           Relevant Coursework: Object Oriented Programming I & II, Discrete Structures, Computer Systems, Organization of Programming Languages
-          
+
           Extracurriculars: BigTh!nk AI, Google Developer Student Club, Bitcamp, Break Through Tech (Initiative of Cornell Tech)
 
           Awards: College of Computer, Mathematical, and Natural Sciences' Dean's List
@@ -414,7 +414,7 @@ params:
             - Varsity volleyball
             - Math National Honors Society
             - Science National Honors Society
-          
+
           Awards:
             - Honor Roll Student
             - AP® Scholar with Distinction
@@ -430,7 +430,7 @@ params:
       - title: GitHub Arctic Code Vault Contributor
         content: |
           Contributed a new endpoint to the [nba-api](https://github.com/swar/nba_api) repository, now part of the GitHub Archive Program.
-          - **Pull Request #514**: [New endpoint for retrieving live betting odds](https://github.com/swar/nba_api/pull/514) 
+          - **Pull Request #514**: [New endpoint for retrieving live betting odds](https://github.com/swar/nba_api/pull/514)
           - Recognized as an **Arctic Code Vault Contributor**.
         image: "/images/github-merge.png"
       - title: Dean's List
@@ -450,7 +450,7 @@ params:
         content: Completed 30 Hours of Training & Passed Assessments in Remote Support, Desktop Technology, Network Technology, Server Technology, Cloud Service Technology, Remote Support Scenarios.
         image: /images/MohithsCertificate.jpg
       - title: AP Scholar With Distinction Award
-        content: Achieved an average score of at least 3.5 on all AP Exams taken, and scores of 3 or higher on five or more exams. 
+        content: Achieved an average score of at least 3.5 on all AP Exams taken, and scores of 3 or higher on five or more exams.
         image: /images/AP.png
       - title: Research in Genome Computing
         content: Collaborated with a team to Investigate a variety of DNA configurations and their impacts, enhancing comprehension of molecular organization and the binding behavior of enzymes and drugs.
@@ -479,7 +479,7 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/mohithn04/case-study-ACME.git
-      
+
       - title: Mohith's Portfolio & Perspective
         content: A personal portfolio and blog website that I created using Hugo and hosted on Netlify. The website is built with HTML, CSS, Bootstrap, and JavaScript, demonstrating my proficiency in these languages and my ability to create a user-friendly and responsive web design. The blog section of the website serves as a platform for me to share my insights and experiences in the field of computer science, particularly in machine learning, data analytics and innovation. This project not only showcases my technical skills but also my passion for sharing knowledge and engaging with the tech community.
         image: /images/projects/NH.jpg
@@ -562,7 +562,7 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/mohithn04
-      
+
       - title: Mad Raisin CPU
         content: Designed and implemented 10+ functions using bit operators and bit masking to extract and manipulate fields of MAD Raisin processor instructions. Developed functions to load and disassemble programs in memory. Increased understanding of hardware and assembly language concepts. Coded and maintained project using C on MobaXterm
         image: /images/projects/CPU.jpg

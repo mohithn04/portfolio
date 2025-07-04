@@ -1,0 +1,199 @@
+{{ define "head" }}
+<meta name="description" content="Thank you for requesting my resume">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+Resume Access | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="resume-downloaded" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <div class="success-icon mb-4">
+            <i class="fas fa-envelope-circle-check fa-5x text-success"></i>
+          </div>
+          <h1 class="display-4 mb-4">Email Sent Successfully!</h1>
+        </div>
+
+        <div class="card shadow-lg">
+          <div class="card-body p-5">
+            <div class="text-center mb-4">
+              <p class="lead" id="personalizedMessage">Thanks for your interest in my resume!</p>
+              <p class="mb-4">I've sent you an email with secure access details.</p>
+            </div>
+
+            <div class="alert alert-info text-center mb-4">
+              <h5><i class="fas fa-shield-alt me-2"></i>Secure Access Provided</h5>
+              <p class="mb-2">Your email contains:</p>
+              <ul class="list-unstyled">
+                <li>✓ Direct link to my password-protected resume</li>
+                <li>✓ Unique access password</li>
+                <li>✓ My contact information for follow-up</li>
+              </ul>
+              <p class="mb-0"><small class="text-muted">Please check your spam/junk folder if you don't see the email.</small></p>
+            </div>
+
+            <div class="text-center mt-4 p-4 bg-light rounded">
+              <h5 class="mb-3">
+                <i class="fas fa-key me-2"></i>
+                Access Instructions
+              </h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="step-box p-3 rounded">
+                    <h6><span class="badge bg-primary rounded-pill">1</span> Check Email</h6>
+                    <p class="small mb-0">Look for the email with resume access details</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="step-box p-3 rounded">
+                    <h6><span class="badge bg-primary rounded-pill">2</span> Use Password</h6>
+                    <p class="small mb-0">Enter the provided password to access the resume</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info my-5">
+              <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-3">
+                  <div class="contact-item">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                    <h5>Direct Contact</h5>
+                    <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary" id="emailBtn">
+                      mohith.n2022@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6 text-center mb-3">
+                  <div class="contact-item">
+                    <i class="fab fa-linkedin fa-2x text-primary mb-2"></i>
+                    <h5>LinkedIn</h5>
+                    <a href="https://www.linkedin.com/in/mohith-nagendra/" target="_blank" class="btn btn-outline-primary">
+                      Connect with me
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="explore-section">
+              <h4 class="text-center mb-4">While you're here, check out:</h4>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <a href="/#projects" class="btn btn-primary btn-lg w-100">
+                    <i class="fas fa-code me-2"></i>
+                    My latest projects
+                  </a>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <a href="/blogs/" class="btn btn-secondary btn-lg w-100">
+                    <i class="fas fa-blog me-2"></i>
+                    My blog posts
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-5">
+              <a href="/" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>
+                Back to homepage
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Get URL parameters to personalize the message
+const urlParams = new URLSearchParams(window.location.search);
+const userName = urlParams.get('name');
+const userEmail = urlParams.get('email');
+const userCompany = urlParams.get('company');
+
+// Personalize the message
+if (userName) {
+  const messageElement = document.getElementById('personalizedMessage');
+  let personalizedText = `Thanks for your interest, ${userName}!`;
+
+  if (userCompany) {
+    personalizedText += ` I'm excited to learn more about the opportunities at ${userCompany}.`;
+  } else {
+    personalizedText += ` I'm excited to learn more about your interest in working together.`;
+  }
+
+  messageElement.textContent = personalizedText;
+}
+</script>
+
+<style>
+.success-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.contact-item {
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.alert-info {
+  border-left: 4px solid #0dcaf0;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.step-box {
+  background: white;
+  border: 1px solid #dee2e6;
+  transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+{{ end }}
