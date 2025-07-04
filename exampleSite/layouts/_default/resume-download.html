@@ -329,5 +329,75 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 .email-info {
   border-left: 4px solid #0dcaf0;
 }
+
+/* Force black text for form elements in both light and dark modes */
+#resume-download .form-label,
+#resume-download .form-control,
+#resume-download .form-select,
+#resume-download h2,
+#resume-download h3,
+#resume-download h4,
+#resume-download h5,
+#resume-download h6,
+#resume-download p,
+#resume-download .lead,
+#resume-download .alert,
+#resume-download .text-muted,
+#resume-download small {
+  color: #000000 !important;
+}
+
+/* Ensure form inputs maintain black text */
+#resume-download .form-control::placeholder {
+  color: #6c757d !important;
+}
+
+#resume-download .form-control:focus {
+  color: #000000 !important;
+}
+
+/* Override theme colors for this section */
+#resume-download .download-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  color: #000000 !important;
+}
+
+/* Ensure alert text remains black */
+#resume-download .alert * {
+  color: #000000 !important;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] #resume-download .form-label,
+[data-theme="dark"] #resume-download .form-control,
+[data-theme="dark"] #resume-download .form-select,
+[data-theme="dark"] #resume-download h2,
+[data-theme="dark"] #resume-download h3,
+[data-theme="dark"] #resume-download h4,
+[data-theme="dark"] #resume-download h5,
+[data-theme="dark"] #resume-download h6,
+[data-theme="dark"] #resume-download p,
+[data-theme="dark"] #resume-download .lead,
+[data-theme="dark"] #resume-download .alert,
+[data-theme="dark"] #resume-download .text-muted,
+[data-theme="dark"] #resume-download small {
+  color: #000000 !important;
+}
+
+.dark #resume-download .form-label,
+.dark #resume-download .form-control,
+.dark #resume-download .form-select,
+.dark #resume-download h2,
+.dark #resume-download h3,
+.dark #resume-download h4,
+.dark #resume-download h5,
+.dark #resume-download h6,
+.dark #resume-download p,
+.dark #resume-download .lead,
+.dark #resume-download .alert,
+.dark #resume-download .text-muted,
+.dark #resume-download small {
+  color: #000000 !important;
+}
 </style>
 {{ end }}
