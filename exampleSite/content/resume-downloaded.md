@@ -12,7 +12,7 @@ Thanks for downloading my resume!
 I'd love to hear more about what you're working on. Feel free to reach out:
 
 **Email:** mohith.n2022@gmail.com
-**LinkedIn:** [Connect with me](https://www.linkedin.com/in/mohith-nagendra/)
+**LinkedIn:** [Connect with me](www.linkedin.com/in/mohith-n)
 
 While you're here, check out:
 - [My latest projects](/#projects)
