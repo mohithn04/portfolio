@@ -19,6 +19,8 @@ function loadEnv() {
     });
 
     console.log('Environment variables loaded from .env file');
+    console.log('HUGO_RESUME_GOOGLE_DRIVE_LINK:', process.env.HUGO_RESUME_GOOGLE_DRIVE_LINK ? 'Set' : 'Not set');
+    console.log('HUGO_RESUME_PASSWORD:', process.env.HUGO_RESUME_PASSWORD ? 'Set' : 'Not set');
   } else {
     console.log('No .env file found');
   }

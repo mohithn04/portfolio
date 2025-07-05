@@ -1,18 +1,18 @@
 [build]
 publish = "exampleSite/public"
-command = 'cd exampleSite && echo -e "\ngoogleAnalytics: $GOOGLE_ANALYTICS \ndisqusShortname: $DISQUS_SHORTNAME \n" >> config.yaml && hugo --gc --minify --themesDir ../..'
+command = "cd exampleSite && hugo --gc --minify --buildFuture --themesDir ../.. -b $DEPLOY_PRIME_URL"
 
-[context.production.environment]
+[build.environment]
 HUGO_VERSION = "0.92.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
 HUGO_THEME = "repo"
 
-[context.split1]
-command = "cd exampleSite && hugo --gc --minify --enableGitInfo --themesDir ../.."
+[context.production.environment]
+HUGO_ENV = "production"
 
-[context.split1.environment]
-HUGO_VERSION = "0.92.0"
+# Environment variables with HUGO_ prefix for security compliance
+# These should be set in Netlify dashboard under Site settings > Environment variables
+# HUGO_RESUME_GOOGLE_DRIVE_LINK = "your_google_drive_link_here"
+# HUGO_RESUME_PASSWORD = "your_secure_password_here"
 HUGO_ENV = "production"
 HUGO_THEME = "repo"
 

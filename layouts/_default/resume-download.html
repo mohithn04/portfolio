@@ -235,9 +235,9 @@ function generatePassword() {
 }
 
 function simulateEmailSending(password) {
-  // Get resume configuration from environment variables
-  const resumeLink = '{{ getenv "RESUME_GOOGLE_DRIVE_LINK" | default "https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing" }}';
-  const resumePassword = '{{ getenv "RESUME_PASSWORD" | default "DefaultPassword123" }}';
+  // Get resume configuration from environment variables with HUGO_ prefix
+  const resumeLink = '{{ getenv "HUGO_RESUME_GOOGLE_DRIVE_LINK" | default "https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing" }}';
+  const resumePassword = '{{ getenv "HUGO_RESUME_PASSWORD" | default "DefaultPassword123" }}';
 
   // This simulates what your automated email would contain
   const emailContent = `
