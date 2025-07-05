@@ -5,7 +5,7 @@
 {{ end }}
 
 {{ define "title" }}
-Resume Access | {{ .Site.Title }}
+Resume Request Sent | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
@@ -15,48 +15,27 @@ Resume Access | {{ .Site.Title }}
       <div class="col-lg-8">
         <div class="text-center mb-5">
           <div class="success-icon mb-4">
-            <i class="fas fa-envelope-circle-check fa-5x text-success"></i>
+            <i class="fas fa-check-circle fa-5x text-success"></i>
           </div>
-          <h1 class="display-4 mb-4">Email Sent Successfully!</h1>
+          <h1 class="display-4 mb-4">Request Sent!</h1>
         </div>
 
         <div class="card shadow-lg">
           <div class="card-body p-5">
             <div class="text-center mb-4">
-              <p class="lead" id="personalizedMessage">Thanks for your interest in my resume!</p>
-              <p class="mb-4">I've sent you an email with secure access details.</p>
+              <p class="lead" id="personalizedMessage">Thanks for reaching out!</p>
+              <p class="mb-4">I'll send you my resume shortly via email.</p>
             </div>
 
             <div class="alert alert-info text-center mb-4">
-              <h5><i class="fas fa-shield-alt me-2"></i>Secure Access Provided</h5>
-              <p class="mb-2">Your email contains:</p>
+              <h5><i class="fas fa-clock me-2"></i>What's Next?</h5>
+              <p class="mb-2">I'll respond with:</p>
               <ul class="list-unstyled">
-                <li>✓ Direct link to my password-protected resume</li>
-                <li>✓ Unique access password</li>
-                <li>✓ My contact information for follow-up</li>
+                <li>✓ Direct link to my resume</li>
+                <li>✓ Password to access the document</li>
+                <li>✓ My contact information</li>
               </ul>
-              <p class="mb-0"><small class="text-muted">Please check your spam/junk folder if you don't see the email.</small></p>
-            </div>
-
-            <div class="text-center mt-4 p-4 bg-light rounded">
-              <h5 class="mb-3">
-                <i class="fas fa-key me-2"></i>
-                Access Instructions
-              </h5>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <div class="step-box p-3 rounded">
-                    <h6><span class="badge bg-primary rounded-pill">1</span> Check Email</h6>
-                    <p class="small mb-0">Look for the email with resume access details</p>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <div class="step-box p-3 rounded">
-                    <h6><span class="badge bg-primary rounded-pill">2</span> Use Password</h6>
-                    <p class="small mb-0">Enter the provided password to access the resume</p>
-                  </div>
-                </div>
-              </div>
+              <p class="mb-0"><small class="text-muted">Response time: Usually within a few hours</small></p>
             </div>
 
             <div class="contact-info my-5">
@@ -65,7 +44,7 @@ Resume Access | {{ .Site.Title }}
                   <div class="contact-item">
                     <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
                     <h5>Direct Contact</h5>
-                    <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary" id="emailBtn">
+                    <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary">
                       mohith.n2022@gmail.com
                     </a>
                   </div>
@@ -117,20 +96,16 @@ Resume Access | {{ .Site.Title }}
 // Get URL parameters to personalize the message
 const urlParams = new URLSearchParams(window.location.search);
 const userName = urlParams.get('name');
-const userEmail = urlParams.get('email');
 const userCompany = urlParams.get('company');
 
-// Personalize the message
 if (userName) {
   const messageElement = document.getElementById('personalizedMessage');
-  let personalizedText = `Thanks for your interest, ${userName}!`;
-
+  let personalizedText = `Thanks for reaching out, ${userName}!`;
   if (userCompany) {
     personalizedText += ` I'm excited to learn more about the opportunities at ${userCompany}.`;
   } else {
     personalizedText += ` I'm excited to learn more about your interest in working together.`;
   }
-
   messageElement.textContent = personalizedText;
 }
 </script>
@@ -185,18 +160,7 @@ if (userName) {
   border-radius: 10px;
 }
 
-.step-box {
-  background: white;
-  border: 1px solid #dee2e6;
-  transition: transform 0.3s ease;
-}
-
-.step-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Force black text for all elements in both light and dark modes */
+/* Force black text for all elements */
 #resume-downloaded h1,
 #resume-downloaded h2,
 #resume-downloaded h3,
@@ -205,6 +169,42 @@ if (userName) {
 #resume-downloaded h6,
 #resume-downloaded p,
 #resume-downloaded .lead,
+#resume-downloaded .alert,
+#resume-downloaded .text-muted,
+#resume-downloaded small,
+#resume-downloaded .card-body {
+  color: #000000 !important;
+}
+
+#resume-downloaded .card {
+  background-color: #ffffff !important;
+}
+
+#resume-downloaded .alert * {
+  color: #000000 !important;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] #resume-downloaded h1,
+[data-theme="dark"] #resume-downloaded h2,
+[data-theme="dark"] #resume-downloaded h3,
+[data-theme="dark"] #resume-downloaded h4,
+[data-theme="dark"] #resume-downloaded h5,
+[data-theme="dark"] #resume-downloaded h6,
+[data-theme="dark"] #resume-downloaded p,
+[data-theme="dark"] #resume-downloaded .lead,
+[data-theme="dark"] #resume-downloaded .alert,
+[data-theme="dark"] #resume-downloaded .text-muted,
+[data-theme="dark"] #resume-downloaded small,
+[data-theme="dark"] #resume-downloaded .card-body {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] #resume-downloaded .card {
+  background-color: #ffffff !important;
+}
+</style>
+{{ end }}
 #resume-downloaded .alert,
 #resume-downloaded .text-muted,
 #resume-downloaded small,
