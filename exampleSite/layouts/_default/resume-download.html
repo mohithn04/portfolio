@@ -180,12 +180,15 @@ let userFormData = {};
 document.getElementById('resumeForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // Validate form
+  // Validate form first
   if (!this.checkValidity()) {
     e.stopPropagation();
     this.classList.add('was-validated');
-    return;
+    return; // Stop here if form is invalid
   }
+
+  // Only proceed if form is valid
+  this.classList.add('was-validated');
 
   // Store form data
   const formData = new FormData(this);
@@ -199,15 +202,15 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
     timestamp: new Date().toISOString()
   };
 
-  // Show processing step
+  // Create email template first
+  createEmailTemplate();
+
+  // Show processing step only after form validation passes
   showStep('processingStep');
   animateProgress();
 
-  // Create email template
-  createEmailTemplate();
-
+  // Simulate processing time then open email client
   setTimeout(() => {
-    // Try to open email client with template
     try {
       window.location.href = window.emailContent.mailtoLink;
 
@@ -381,8 +384,13 @@ function showStep(stepId) {
     step.style.display = 'none';
   });
 
-  // Show selected step
-  document.getElementById(stepId).style.display = 'block';
+  // Show selected step - for processing step, use flex display
+  const selectedStep = document.getElementById(stepId);
+  if (stepId === 'processingStep') {
+    selectedStep.style.display = 'flex';
+  } else {
+    selectedStep.style.display = 'block';
+  }
 }
 
 function animateProgress() {
