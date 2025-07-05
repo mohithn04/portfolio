@@ -119,7 +119,7 @@ Edit `exampleSite/config.yaml` to customize:
 ## 📧 Contact & Support
 
 - **Email**: [mohith.n2022@gmail.com](mailto:mohith.n2022@gmail.com)
-- **LinkedIn**: [mohith-nagendra](https://www.linkedin.com/in/mohith-nagendra/)
+- **LinkedIn**: [mohith-nagendra](www.linkedin.com/in/mohith-n)
 - **GitHub**: [mohithn04](https://github.com/mohithn04)
 - **Website**: [mohithn.netlify.app](https://mohithn.netlify.app)
 

@@ -140,7 +140,7 @@ params:
         - icon: fas fa-envelope
           url: mailto:mohith.n2022@gmail.com
         - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/mohith-nagendra/
+          url: www.linkedin.com/in/mohith-n
         - icon: fab fa-github
           url:  https://github.com/mohithn04
         - icon: fab fa-flipboard
@@ -595,7 +595,7 @@ params:
       disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/mohithn04
-      linkedin: https://www.linkedin.com/in/mohith-nagendra/
+      linkedin: www.linkedin.com/in/mohith-n
       twitter: https://twitter.com
       instagram: https://instagram.com
 
