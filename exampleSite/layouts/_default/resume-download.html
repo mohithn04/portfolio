@@ -105,7 +105,7 @@ Resume Download | {{ .Site.Title }}
             <h3 class="mb-3">Email Client Opened!</h3>
             <div class="alert alert-info">
               <h5><i class="fas fa-envelope-open me-2"></i>Ready to Send</h5>
-              <p class="mb-2">Your email client opened with a pre-filled message to me:</p>
+              <p class="mb-2">Your email client should have opened with a pre-filled message to me:</p>
               <ul class="list-unstyled">
                 <li>✓ Pre-filled subject line</li>
                 <li>✓ Your introduction and details</li>
@@ -120,17 +120,41 @@ Resume Download | {{ .Site.Title }}
                 <i class="fas fa-info-circle me-1"></i>
                 Once you send the email, I'll respond with my resume link and password.
               </p>
+              <div class="small text-warning mt-2">
+                <i class="fas fa-exclamation-triangle me-1"></i>
+                <strong>Note:</strong> Keep the subject line unchanged for automatic response!
+              </div>
             </div>
 
             <div class="text-center mt-4">
-              <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary me-3">
-                <i class="fas fa-envelope me-2"></i>
-                Open Email Again
-              </a>
-              <button type="button" class="btn btn-outline-secondary" id="startOverBtn">
-                <i class="fas fa-redo me-2"></i>
-                Start Over
-              </button>
+              <div class="row justify-content-center">
+                <div class="col-md-6 mb-2">
+                  <button class="btn btn-primary w-100" onclick="openGmailWithTemplate()">
+                    <i class="fab fa-google me-2"></i>
+                    Open in Gmail
+                  </button>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <button class="btn btn-outline-primary w-100" onclick="retryMailtoWithTemplate()">
+                    <i class="fas fa-envelope me-2"></i>
+                    Open Email Client Again
+                  </button>
+                </div>
+              </div>
+              <div class="row justify-content-center mt-2">
+                <div class="col-md-6 mb-2">
+                  <button class="btn btn-outline-secondary w-100" onclick="copyEmailContent()">
+                    <i class="fas fa-copy me-2"></i>
+                    Copy Email Content
+                  </button>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <button type="button" class="btn btn-outline-secondary w-100" id="startOverBtn">
+                    <i class="fas fa-redo me-2"></i>
+                    Start Over
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -175,41 +199,177 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
   showStep('processingStep');
   animateProgress();
 
-  // Create email that will open in their Gmail
-  const subject = encodeURIComponent(`RESUME REQUEST - ${userFormData.firstName} ${userFormData.lastName}`);
-
-  let emailBody = `Hi Mohith,\n\n`;
-  emailBody += `My name is ${userFormData.firstName} ${userFormData.lastName}`;
-  if (userFormData.company) {
-    emailBody += ` from ${userFormData.company}`;
-  }
-  emailBody += `.\n\n`;
-  emailBody += `I'm interested in: ${userFormData.purpose.replace('_', ' ')}\n\n`;
-  emailBody += `${userFormData.message}\n\n`;
-  emailBody += `My contact information:\n`;
-  emailBody += `Email: ${userFormData.email}\n`;
-  if (userFormData.company) {
-    emailBody += `Company: ${userFormData.company}\n`;
-  }
-  emailBody += `Timestamp: ${userFormData.timestamp}\n\n`;
-  emailBody += `I'd love to connect and learn more about potential opportunities to work together.\n\n`;
-  emailBody += `Best regards,\n${userFormData.firstName} ${userFormData.lastName}`;
-
-  const encodedBody = encodeURIComponent(emailBody);
-  const mailtoLink = `mailto:mohith.n2022@gmail.com?subject=${subject}&body=${encodedBody}`;
-
-  // Just log for your records (no Netlify submission)
-  console.log('Resume request initiated:', userFormData);
+  // Create email template
+  createEmailTemplate();
 
   setTimeout(() => {
-    // Open user's email client to send the request
-    window.location.href = mailtoLink;
+    // Try to open email client with template
+    try {
+      window.location.href = window.emailContent.mailtoLink;
 
-    // Show success step
-    showStep('successStep');
-    document.getElementById('emailAddress').textContent = userFormData.email;
+      // Show success step
+      showStep('successStep');
+      document.getElementById('emailAddress').textContent = userFormData.email;
+
+      // Check if mailto worked after a delay
+      setTimeout(() => {
+        showEmailFallback();
+      }, 3000);
+
+    } catch (error) {
+      console.error('Mailto failed:', error);
+      showEmailFallback();
+    }
   }, 2000);
 });
+
+function createEmailTemplate() {
+  const subject = encodeURIComponent('RESUME REQUEST - ' + userFormData.firstName + ' ' + userFormData.lastName);
+
+  let emailBody = 'Hi Mohith,\n\n';
+  emailBody += 'My name is ' + userFormData.firstName + ' ' + userFormData.lastName;
+  if (userFormData.company) {
+    emailBody += ' from ' + userFormData.company;
+  }
+  emailBody += '.\n\n';
+  emailBody += 'I\'m interested in: ' + userFormData.purpose.replace('_', ' ') + '\n\n';
+  emailBody += userFormData.message + '\n\n';
+  emailBody += 'My contact information:\n';
+  emailBody += 'Email: ' + userFormData.email + '\n';
+  if (userFormData.company) {
+    emailBody += 'Company: ' + userFormData.company + '\n';
+  }
+  emailBody += 'Timestamp: ' + userFormData.timestamp + '\n\n';
+  emailBody += 'I\'d love to connect and learn more about potential opportunities to work together.\n\n';
+  emailBody += 'Best regards,\n' + userFormData.firstName + ' ' + userFormData.lastName;
+
+  const encodedBody = encodeURIComponent(emailBody);
+  const mailtoLink = 'mailto:mohith.n2022@gmail.com?subject=' + subject + '&body=' + encodedBody;
+
+  // Store email content globally for reuse
+  window.emailContent = {
+    to: 'mohith.n2022@gmail.com',
+    subject: subject,
+    body: emailBody,
+    encodedBody: encodedBody,
+    mailtoLink: mailtoLink
+  };
+
+  // Log for your records
+  console.log('Resume request initiated:', userFormData);
+}
+
+function openGmailWithTemplate() {
+  if (window.emailContent) {
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + window.emailContent.to + '&su=' + window.emailContent.subject + '&body=' + window.emailContent.encodedBody;
+    window.open(gmailUrl, '_blank');
+  }
+}
+
+function retryMailtoWithTemplate() {
+  if (window.emailContent) {
+    window.location.href = window.emailContent.mailtoLink;
+  }
+}
+
+function copyEmailContent() {
+  if (window.emailContent) {
+    const emailText = 'To: ' + window.emailContent.to + '\nSubject: ' + decodeURIComponent(window.emailContent.subject) + '\n\n' + window.emailContent.body;
+
+    navigator.clipboard.writeText(emailText).then(() => {
+      // Create a temporary success message
+      const button = event.target;
+      const originalText = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check me-2"></i>Copied!';
+      button.classList.remove('btn-outline-secondary');
+      button.classList.add('btn-success');
+
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('btn-success');
+        button.classList.add('btn-outline-secondary');
+      }, 2000);
+
+      // Show the warning about subject line
+      showSubjectLineWarning();
+    }).catch(() => {
+      // Fallback for older browsers
+      showEmailDetails();
+    });
+  }
+}
+
+function showSubjectLineWarning() {
+  // Show warning about keeping the subject line intact
+  const emailInfo = document.querySelector('.email-info');
+  if (emailInfo && window.emailContent) {
+    const warningHtml = '<div class="alert alert-warning mt-3" id="subjectWarning">' +
+      '<h6><i class="fas fa-exclamation-triangle me-2"></i>Important: Subject Line Required</h6>' +
+      '<p class="mb-2">For the automatic response to work, please ensure the subject line remains exactly:</p>' +
+      '<p class="mb-2"><code class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</code></p>' +
+      '<p class="mb-0 small">Any changes to the subject line will prevent the automated resume delivery from working.</p>' +
+      '</div>';
+
+    // Check if warning already exists to avoid duplicates
+    if (!document.getElementById('subjectWarning')) {
+      emailInfo.innerHTML += warningHtml;
+    }
+  }
+}
+
+function showEmailDetails() {
+  // Show email details if copy fails
+  const emailInfo = document.querySelector('.email-info');
+  if (emailInfo && window.emailContent) {
+    const detailsHtml = '<div class="mt-3 p-3 border rounded">' +
+      '<h6>Email Details (Copy manually):</h6>' +
+      '<div class="alert alert-warning mb-3">' +
+        '<i class="fas fa-exclamation-triangle me-2"></i>' +
+        '<strong>Important:</strong> The subject line <em>"' + decodeURIComponent(window.emailContent.subject) + '"</em> must remain exactly as shown for the automatic response to work!' +
+      '</div>' +
+      '<p><strong>To:</strong> ' + window.emailContent.to + '</p>' +
+      '<p><strong>Subject:</strong> <span class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</span></p>' +
+      '<div class="mb-2">' +
+        '<strong>Message:</strong>' +
+        '<textarea class="form-control mt-1" rows="8" readonly onclick="this.select()">' + window.emailContent.body + '</textarea>' +
+      '</div>' +
+      '</div>';
+    emailInfo.innerHTML += detailsHtml;
+  }
+}
+
+function showEmailFallback() {
+  // Add fallback options if mailto doesn't work
+  const emailInfo = document.querySelector('.email-info');
+  if (emailInfo && window.emailContent) {
+    const fallbackHtml = '<div class="alert alert-info mt-3" id="emailFallback">' +
+      '<h6><i class="fas fa-exclamation-triangle me-2"></i>Email Client Not Opening?</h6>' +
+      '<p class="mb-2">Try these alternatives:</p>' +
+      '<div class="d-grid gap-2 d-md-flex justify-content-md-center">' +
+        '<button class="btn btn-primary btn-sm" onclick="openGmailWithTemplate()">' +
+          '<i class="fab fa-google me-1"></i>Gmail' +
+        '</button>' +
+        '<button class="btn btn-outline-primary btn-sm" onclick="retryMailtoWithTemplate()">' +
+          '<i class="fas fa-envelope me-1"></i>Retry' +
+        '</button>' +
+        '<button class="btn btn-outline-secondary btn-sm" onclick="copyEmailContent()">' +
+          '<i class="fas fa-copy me-1"></i>Copy' +
+        '</button>' +
+      '</div>' +
+      '<div class="mt-3 p-2 bg-light rounded">' +
+        '<small class="text-muted">' +
+          '<i class="fas fa-info-circle me-1"></i>' +
+          '<strong>Remember:</strong> Keep the subject line "' + decodeURIComponent(window.emailContent.subject) + '" unchanged for auto-response!' +
+        '</small>' +
+      '</div>' +
+      '</div>';
+
+    // Check if fallback already exists to avoid duplicates
+    if (!document.getElementById('emailFallback')) {
+      emailInfo.innerHTML += fallbackHtml;
+    }
+  }
+}
 
 function showStep(stepId) {
   // Hide all steps
@@ -238,6 +398,8 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
   showStep('formStep');
   document.getElementById('resumeForm').reset();
   document.getElementById('resumeForm').classList.remove('was-validated');
+  // Clear stored email content
+  window.emailContent = null;
 });
 </script>
 
@@ -354,22 +516,6 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 [data-theme="dark"] #resume-download .alert,
 [data-theme="dark"] #resume-download .text-muted,
 [data-theme="dark"] #resume-download small {
-  color: #000000 !important;
-}
-
-.dark #resume-download .form-label,
-.dark #resume-download .form-control,
-.dark #resume-download .form-select,
-.dark #resume-download h2,
-.dark #resume-download h3,
-.dark #resume-download h4,
-.dark #resume-download h5,
-.dark #resume-download h6,
-.dark #resume-download p,
-.dark #resume-download .lead,
-.dark #resume-download .alert,
-.dark #resume-download .text-muted,
-.dark #resume-download small {
   color: #000000 !important;
 }
 </style>
