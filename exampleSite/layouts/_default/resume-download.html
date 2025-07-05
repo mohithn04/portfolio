@@ -86,14 +86,18 @@ Resume Download | {{ .Site.Title }}
           </div>
 
           <!-- Step 2: Processing -->
-          <div id="processingStep" class="step-content text-center" style="display: none;">
-            <div class="spinner-border text-primary mb-3" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <h4 class="mb-3">Sending Your Request</h4>
-            <p class="lead">Your request is being submitted...</p>
-            <div class="progress mt-4">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
+          <div id="processingStep" class="step-content processing-overlay" style="display: none;">
+            <div class="processing-content">
+              <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h4 class="mb-3">Sending Your Request</h4>
+              <p class="lead">Your request is being submitted...</p>
+              <div class="progress-container">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -432,6 +436,7 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 }
 
 .download-container {
+  position: relative;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border: 1px solid #dee2e6;
 }
@@ -456,13 +461,50 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
   }
 }
 
-.progress {
-  height: 10px;
-  border-radius: 5px;
+.progress-container {
+  margin-top: 2rem;
+  width: 100%;
 }
 
-.email-info {
-  border-left: 4px solid #0dcaf0;
+.progress {
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  transition: width 0.3s ease;
+}
+
+.processing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 249, 250, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.processing-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Ensure the download container has relative positioning for the overlay */
+.download-container {
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
 }
 
 /* Force black text for form elements in both light and dark modes */
@@ -516,6 +558,16 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 [data-theme="dark"] #resume-download .alert,
 [data-theme="dark"] #resume-download .text-muted,
 [data-theme="dark"] #resume-download small {
+  color: #000000 !important;
+}
+
+/* Dark mode overrides for processing overlay */
+[data-theme="dark"] .processing-overlay {
+  background: rgba(248, 249, 250, 0.95) !important;
+}
+
+[data-theme="dark"] .processing-content h4,
+[data-theme="dark"] .processing-content p {
   color: #000000 !important;
 }
 </style>
