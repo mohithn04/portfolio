@@ -1,11 +1,11 @@
 {{ define "head" }}
-<meta name="description" content="Download {{ .Site.Params.title }} Resume">
+<meta name="description" content="Contact me for resume access">
 <link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
 <script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
 {{ end }}
 
 {{ define "title" }}
-Resume Download | {{ .Site.Title }}
+Resume Request | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
@@ -16,127 +16,45 @@ Resume Download | {{ .Site.Title }}
         <div class="download-container p-5 bg-light rounded shadow">
           <div class="text-center mb-4">
             <i class="fas fa-file-pdf fa-4x text-primary mb-4"></i>
-            <h2 class="mb-3">Access My Resume</h2>
-            <p class="lead">I'd love to connect! Please provide your details and I'll send you the resume access password via email.</p>
+            <h2 class="mb-3">Request My Resume</h2>
+            <p class="lead">I'd love to connect! Click the button below to send me an email and I'll respond with my resume.</p>
           </div>
 
-          <!-- Step 1: Form -->
-          <div id="formStep" class="step-content">
-            <form id="resumeForm" class="needs-validation" novalidate>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="firstName" class="form-label">First Name *</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" required>
-                  <div class="invalid-feedback">
-                    Please provide your first name.
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="lastName" class="form-label">Last Name *</label>
-                  <input type="text" class="form-control" id="lastName" name="lastName" required>
-                  <div class="invalid-feedback">
-                    Please provide your last name.
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label">Your Email Address *</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">
-                  Please provide a valid email address.
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="company" class="form-label">Company/Organization</label>
-                <input type="text" class="form-control" id="company" name="company">
-              </div>
-
-              <div class="mb-3">
-                <label for="purpose" class="form-label">What's your interest? *</label>
-                <select class="form-select" id="purpose" name="purpose" required>
-                  <option value="">Select an option</option>
-                  <option value="job_opportunity">Job Opportunity</option>
-                  <option value="collaboration">Collaboration</option>
-                  <option value="networking">Networking</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="other">Other</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select your purpose.
-                </div>
-              </div>
-
-              <div class="mb-4">
-                <label for="message" class="form-label">Tell me about yourself and your interest *</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Hi Mohith, I'm interested in..." required></textarea>
-                <div class="invalid-feedback">
-                  Please provide a brief introduction.
-                </div>
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
-                  <i class="fas fa-envelope me-2"></i>
-                  Request Resume Access
-                </button>
-              </div>
-            </form>
+          <div class="text-center">
+            <a href="mailto:mohith.n2022@gmail.com?subject=Resume Request&body=Hi Mohith,%0D%0A%0D%0AI'm interested in learning more about your background and would like to request access to your resume.%0D%0A%0D%0AName: %0D%0ACompany: %0D%0APurpose: %0D%0A%0D%0AThank you!"
+               class="btn btn-primary btn-lg px-5 mb-4">
+              <i class="fas fa-envelope me-2"></i>
+              Send Email Request
+            </a>
           </div>
 
-          <!-- Step 2: Processing -->
-          <div id="processingStep" class="step-content text-center" style="display: none;">
-            <div class="spinner-border text-primary mb-3" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <h4 class="mb-3">Processing Your Request</h4>
-            <p class="lead">Generating secure access and sending email...</p>
-            <div class="progress mt-4">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
-            </div>
+          <div class="alert alert-info">
+            <h5><i class="fas fa-info-circle me-2"></i>What happens next?</h5>
+            <ul class="mb-0">
+              <li>Your default email client will open with a pre-filled message</li>
+              <li>Feel free to customize the message with your details</li>
+              <li>I'll respond quickly with my resume and contact information</li>
+            </ul>
           </div>
 
-          <!-- Step 3: Success -->
-          <div id="successStep" class="step-content text-center" style="display: none;">
-            <div class="success-icon mb-4">
-              <i class="fas fa-check-circle fa-5x text-success"></i>
-            </div>
-            <h3 class="mb-3">Email Sent Successfully!</h3>
-            <div class="alert alert-success">
-              <h5><i class="fas fa-envelope me-2"></i>Check Your Email</h5>
-              <p class="mb-2">I've sent you an email with:</p>
-              <ul class="list-unstyled">
-                <li>✓ Direct link to my resume</li>
-                <li>✓ Password to access the document</li>
-                <li>✓ My contact information</li>
-              </ul>
-            </div>
-
-            <div class="email-info mt-4 p-3 bg-light rounded">
-              <h6>Email sent to: <span id="emailAddress" class="text-primary"></span></h6>
-              <p class="mb-2 small text-muted">
-                <i class="fas fa-info-circle me-1"></i>
-                If you don't see the email in your inbox, please check your spam/junk folder.
-              </p>
-            </div>
-
-            <div class="text-center mt-4">
-              <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary me-3">
-                <i class="fas fa-reply me-2"></i>
-                Reply to Email
-              </a>
-              <button type="button" class="btn btn-outline-secondary" id="startOverBtn">
-                <i class="fas fa-redo me-2"></i>
-                Start Over
-              </button>
+          <div class="contact-info mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-6 text-center mb-3">
+                <div class="contact-item">
+                  <i class="fab fa-linkedin fa-2x text-primary mb-2"></i>
+                  <h5>LinkedIn</h5>
+                  <a href="https://www.linkedin.com/in/mohith-nagendra/" target="_blank" class="btn btn-outline-primary">
+                    Connect with me
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="mt-4 text-center">
             <small class="text-muted">
               <i class="fas fa-shield-alt me-1"></i>
-              Your information is secure and will only be used to send you the resume and establish professional contact.
+              I respond to all resume requests within 24 hours.
             </small>
           </div>
         </div>
@@ -145,195 +63,41 @@ Resume Download | {{ .Site.Title }}
   </div>
 </section>
 
-<script>
-let userFormData = {};
-
-document.getElementById('resumeForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  // Validate form
-  if (!this.checkValidity()) {
-    e.stopPropagation();
-    this.classList.add('was-validated');
-    return;
-  }
-
-  // Store form data
-  const formData = new FormData(this);
-  userFormData = {
-    firstName: formData.get('firstName'),
-    lastName: formData.get('lastName'),
-    email: formData.get('email'),
-    company: formData.get('company'),
-    purpose: formData.get('purpose'),
-    message: formData.get('message'),
-    timestamp: new Date().toISOString()
-  };
-
-  // Show processing step
-  showStep('processingStep');
-
-  // Start progress animation
-  animateProgress();
-
-  // Send email (simulate the automated process)
-  setTimeout(() => {
-    sendResumeEmail();
-  }, 3000);
-});
-
-function showStep(stepId) {
-  // Hide all steps
-  document.querySelectorAll('.step-content').forEach(step => {
-    step.style.display = 'none';
-  });
-
-  // Show selected step
-  document.getElementById(stepId).style.display = 'block';
-}
-
-function animateProgress() {
-  const progressBar = document.getElementById('progressBar');
-  let width = 0;
-  const interval = setInterval(() => {
-    width += 10;
-    progressBar.style.width = width + '%';
-    if (width >= 100) {
-      clearInterval(interval);
-    }
-  }, 200);
-}
-
-function sendResumeEmail() {
-  // Generate a unique password (in real implementation, this would be done server-side)
-  const password = generatePassword();
-
-  // Log the interaction for your records
-  console.log('Resume request processed:', {
-    ...userFormData,
-    password: password,
-    processedAt: new Date().toISOString()
-  });
-
-  // In a real implementation, you would:
-  // 1. Call your backend API to send the email
-  // 2. The backend would use a service like SendGrid, Mailgun, or AWS SES
-  // 3. Email would contain the Google Drive link and password
-
-  // For now, simulate successful email sending
-  simulateEmailSending(password);
-}
-
-function generatePassword() {
-  // Generate a secure password (8-10 characters, mix of letters and numbers)
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let password = '';
-  for (let i = 0; i < 8; i++) {
-    password += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return password;
-}
-
-function simulateEmailSending(password) {
-  // This simulates what your automated email would contain
-  const emailContent = `
-    Subject: Resume Access - ${userFormData.firstName} ${userFormData.lastName}
-
-    Hi ${userFormData.firstName},
-
-    Thank you for your interest in my resume! Here's your secure access:
-
-    📄 Resume Link: https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing
-    🔐 Password: ${password}
-
-    I appreciate your interest in ${userFormData.purpose.replace('_', ' ')} and look forward to connecting with you.
-
-    Best regards,
-    Mohith Nagendra
-    mohith.n2022@gmail.com
-  `;
-
-  console.log('Email content that would be sent:', emailContent);
-
-  // Show success step
-  showStep('successStep');
-  document.getElementById('emailAddress').textContent = userFormData.email;
-}
-
-// Start over functionality
-document.getElementById('startOverBtn').addEventListener('click', function() {
-  showStep('formStep');
-  document.getElementById('resumeForm').reset();
-  document.getElementById('resumeForm').classList.remove('was-validated');
-});
-</script>
-
 <style>
-.form-control:focus, .form-select:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-}
-
-.btn-primary {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.btn-primary:hover {
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
-}
-
-.invalid-feedback {
-  display: block;
-}
-
-.was-validated .form-control:invalid {
-  border-color: #dc3545;
-}
-
-.was-validated .form-control:valid {
-  border-color: #198754;
-}
-
 .download-container {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border: 1px solid #dee2e6;
 }
 
-.step-content {
-  min-height: 400px;
+.contact-item {
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.success-icon {
-  animation: bounce 2s infinite;
+.contact-item:hover {
+  transform: translateY(-5px);
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
+.btn {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.progress {
-  height: 10px;
-  border-radius: 5px;
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.email-info {
+.alert-info {
   border-left: 4px solid #0dcaf0;
+  background-color: #f8f9fa;
+  border-radius: 10px;
 }
 
-/* Force black text for form elements in both light and dark modes */
-#resume-download .form-label,
-#resume-download .form-control,
-#resume-download .form-select,
+/* Force black text for all elements */
 #resume-download h2,
 #resume-download h3,
 #resume-download h4,
@@ -347,30 +111,16 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
   color: #000000 !important;
 }
 
-/* Ensure form inputs maintain black text */
-#resume-download .form-control::placeholder {
-  color: #6c757d !important;
-}
-
-#resume-download .form-control:focus {
-  color: #000000 !important;
-}
-
-/* Override theme colors for this section */
 #resume-download .download-container {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
   color: #000000 !important;
 }
 
-/* Ensure alert text remains black */
 #resume-download .alert * {
   color: #000000 !important;
 }
 
-/* Override any theme-specific text colors */
-[data-theme="dark"] #resume-download .form-label,
-[data-theme="dark"] #resume-download .form-control,
-[data-theme="dark"] #resume-download .form-select,
+/* Dark mode overrides */
 [data-theme="dark"] #resume-download h2,
 [data-theme="dark"] #resume-download h3,
 [data-theme="dark"] #resume-download h4,
@@ -384,10 +134,6 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
   color: #000000 !important;
 }
 
-/* Dark mode overrides */
-.dark #resume-download .form-label,
-.dark #resume-download .form-control,
-.dark #resume-download .form-select,
 .dark #resume-download h2,
 .dark #resume-download h3,
 .dark #resume-download h4,
