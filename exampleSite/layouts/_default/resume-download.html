@@ -322,15 +322,15 @@ function showSubjectLineWarning() {
   // Show warning about keeping the subject line intact
   const emailInfo = document.querySelector('.email-info');
   if (emailInfo && window.emailContent) {
-    const warningHtml = '<div class="alert alert-warning mt-3" id="subjectWarning">' +
-      '<h6><i class="fas fa-exclamation-triangle me-2"></i>Important: Subject Line Required</h6>' +
-      '<p class="mb-2">For the automatic response to work, please ensure the subject line remains exactly:</p>' +
-      '<p class="mb-2"><code class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</code></p>' +
-      '<p class="mb-0 small">Any changes to the subject line will prevent the automated resume delivery from working.</p>' +
-      '</div>';
-
     // Check if warning already exists to avoid duplicates
     if (!document.getElementById('subjectWarning')) {
+      const warningHtml = '<div class="alert alert-warning mt-3" id="subjectWarning">' +
+        '<h6><i class="fas fa-exclamation-triangle me-2"></i>Important: Subject Line Required</h6>' +
+        '<p class="mb-2">For the automatic response to work, please ensure the subject line remains exactly:</p>' +
+        '<p class="mb-2"><code class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</code></p>' +
+        '<p class="mb-0 small">Any changes to the subject line will prevent the automated resume delivery from working.</p>' +
+        '</div>';
+
       emailInfo.innerHTML += warningHtml;
     }
   }
@@ -340,20 +340,24 @@ function showEmailDetails() {
   // Show email details if copy fails
   const emailInfo = document.querySelector('.email-info');
   if (emailInfo && window.emailContent) {
-    const detailsHtml = '<div class="mt-3 p-3 border rounded">' +
-      '<h6>Email Details (Copy manually):</h6>' +
-      '<div class="alert alert-warning mb-3">' +
-        '<i class="fas fa-exclamation-triangle me-2"></i>' +
-        '<strong>Important:</strong> The subject line <em>"' + decodeURIComponent(window.emailContent.subject) + '"</em> must remain exactly as shown for the automatic response to work!' +
-      '</div>' +
-      '<p><strong>To:</strong> ' + window.emailContent.to + '</p>' +
-      '<p><strong>Subject:</strong> <span class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</span></p>' +
-      '<div class="mb-2">' +
-        '<strong>Message:</strong>' +
-        '<textarea class="form-control mt-1" rows="8" readonly onclick="this.select()">' + window.emailContent.body + '</textarea>' +
-      '</div>' +
-      '</div>';
-    emailInfo.innerHTML += detailsHtml;
+    // Check if details already exist to avoid duplicates
+    if (!document.getElementById('emailDetails')) {
+      const detailsHtml = '<div class="mt-3 p-3 border rounded" id="emailDetails">' +
+        '<h6>Email Details (Copy manually):</h6>' +
+        '<div class="alert alert-warning mb-3">' +
+          '<i class="fas fa-exclamation-triangle me-2"></i>' +
+          '<strong>Important:</strong> The subject line <em>"' + decodeURIComponent(window.emailContent.subject) + '"</em> must remain exactly as shown for the automatic response to work!' +
+        '</div>' +
+        '<p><strong>To:</strong> ' + window.emailContent.to + '</p>' +
+        '<p><strong>Subject:</strong> <span class="text-danger fw-bold">' + decodeURIComponent(window.emailContent.subject) + '</span></p>' +
+        '<div class="mb-2">' +
+          '<strong>Message:</strong>' +
+          '<textarea class="form-control mt-1" rows="8" readonly onclick="this.select()">' + window.emailContent.body + '</textarea>' +
+        '</div>' +
+        '</div>';
+
+      emailInfo.innerHTML += detailsHtml;
+    }
   }
 }
 
@@ -361,30 +365,30 @@ function showEmailFallback() {
   // Add fallback options if mailto doesn't work
   const emailInfo = document.querySelector('.email-info');
   if (emailInfo && window.emailContent) {
-    const fallbackHtml = '<div class="alert alert-info mt-3" id="emailFallback">' +
-      '<h6><i class="fas fa-exclamation-triangle me-2"></i>Email Client Not Opening?</h6>' +
-      '<p class="mb-2">Try these alternatives:</p>' +
-      '<div class="d-grid gap-2 d-md-flex justify-content-md-center">' +
-        '<button class="btn btn-primary btn-sm" onclick="openGmailWithTemplate()">' +
-          '<i class="fab fa-google me-1"></i>Gmail' +
-        '</button>' +
-        '<button class="btn btn-outline-primary btn-sm" onclick="retryMailtoWithTemplate()">' +
-          '<i class="fas fa-envelope me-1"></i>Retry' +
-        '</button>' +
-        '<button class="btn btn-outline-secondary btn-sm" onclick="copyEmailContent()">' +
-          '<i class="fas fa-copy me-1"></i>Copy' +
-        '</button>' +
-      '</div>' +
-      '<div class="mt-3 p-2 bg-light rounded">' +
-        '<small class="text-muted">' +
-          '<i class="fas fa-info-circle me-1"></i>' +
-          '<strong>Remember:</strong> Keep the subject line "' + decodeURIComponent(window.emailContent.subject) + '" unchanged for auto-response!' +
-        '</small>' +
-      '</div>' +
-      '</div>';
-
     // Check if fallback already exists to avoid duplicates
     if (!document.getElementById('emailFallback')) {
+      const fallbackHtml = '<div class="alert alert-info mt-3" id="emailFallback">' +
+        '<h6><i class="fas fa-exclamation-triangle me-2"></i>Email Client Not Opening?</h6>' +
+        '<p class="mb-2">Try these alternatives:</p>' +
+        '<div class="d-grid gap-2 d-md-flex justify-content-md-center">' +
+          '<button class="btn btn-primary btn-sm" onclick="openGmailWithTemplate()">' +
+            '<i class="fab fa-google me-1"></i>Gmail' +
+          '</button>' +
+          '<button class="btn btn-outline-primary btn-sm" onclick="retryMailtoWithTemplate()">' +
+            '<i class="fas fa-envelope me-1"></i>Retry' +
+          '</button>' +
+          '<button class="btn btn-outline-secondary btn-sm" onclick="copyEmailContent()">' +
+            '<i class="fas fa-copy me-1"></i>Copy' +
+          '</button>' +
+        '</div>' +
+        '<div class="mt-3 p-2 bg-light rounded">' +
+          '<small class="text-muted">' +
+            '<i class="fas fa-info-circle me-1"></i>' +
+            '<strong>Remember:</strong> Keep the subject line "' + decodeURIComponent(window.emailContent.subject) + '" unchanged for auto-response!' +
+          '</small>' +
+        '</div>' +
+        '</div>';
+
       emailInfo.innerHTML += fallbackHtml;
     }
   }
@@ -434,8 +438,17 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
   showStep('formStep');
   document.getElementById('resumeForm').reset();
   document.getElementById('resumeForm').classList.remove('was-validated');
+
   // Clear stored email content
   window.emailContent = null;
+
+  // Clear any dynamic content that was added
+  const emailInfo = document.querySelector('.email-info');
+  if (emailInfo) {
+    // Remove all dynamic content elements
+    const dynamicElements = emailInfo.querySelectorAll('#subjectWarning, #emailDetails, #emailFallback');
+    dynamicElements.forEach(element => element.remove());
+  }
 });
 </script>
 
