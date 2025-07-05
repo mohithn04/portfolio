@@ -219,10 +219,22 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - job: "AI Software Engineer"
+        company: "PMG"
+        companyUrl: "https://www.pmg.com/"
+        date: "June 2025 - Present"
+        content: |-
+          Graduate Leadership Program | Architecting AI Agentic Workflows
+          - Developing and implementing AI-driven solutions to enhance business processes and customer experiences.
+          - Collaborating with cross-functional teams to design, develop, and deploy AI models and applications.
+          - Conducting research and analysis to identify opportunities for AI integration and optimization.
+          - Built meeting agent with OpenAI API to process calls and automate summaries and follow-ups
+          - Developed client insights agent surfacing client-specific analytics, reducing reporting time by 60% across 50+ analysts
+
       - job: "Software Engineer I"
         company: "Allergan Data Labs"
         companyUrl: "https://www.allergandatalabs.com/"
-        date: "September 2024 - Present"
+        date: "September 2024 - May 2025"
         #featuredLink:
         #  enable: true
         #  url: "https://example.com"
@@ -295,7 +307,7 @@ params:
         #  enable: true
         #  url: "https://example.com"
         content: |
-          - Launched ‘SussanahAI’, a web app that uses AI and the Cohere API for sentiment analysis, spam filtering, and summarization.
+          - Launched 'SussanahAI', a web app that uses AI and the Cohere API for sentiment analysis, spam filtering, and summarization.
           - Implemented the backend using Flask, handling server-side logic, and devised an interactive frontend using Figma and React.
           - Shadowed and received mentoring from a software engineer at Microsoft, learned industry best practices, enhancing my skills.
           - Authored and delivered a professional presentation to effectively communicate project highlights and plans for growth.
