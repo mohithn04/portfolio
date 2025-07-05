@@ -17,12 +17,15 @@ Resume Download | {{ .Site.Title }}
           <div class="text-center mb-4">
             <i class="fas fa-file-pdf fa-4x text-primary mb-4"></i>
             <h2 class="mb-3">Access My Resume</h2>
-            <p class="lead">I'd love to connect! Please provide your details and I'll send you the resume access password via email.</p>
+            <p class="lead">I'd love to connect! Please provide your details and I'll automatically send you my resume.</p>
           </div>
 
           <!-- Step 1: Form -->
           <div id="formStep" class="step-content">
-            <form id="resumeForm" class="needs-validation" novalidate>
+            <form id="resumeForm" name="resume-requests" method="POST" data-netlify="true" class="needs-validation" novalidate>
+              <!-- Hidden field for Netlify -->
+              <input type="hidden" name="form-name" value="resume-requests" />
+
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName" class="form-label">First Name *</label>
@@ -76,10 +79,14 @@ Resume Download | {{ .Site.Title }}
                 </div>
               </div>
 
+              <!-- Hidden fields for email automation -->
+              <input type="hidden" name="timestamp" id="timestamp">
+              <input type="hidden" name="subject" value="RESUME REQUEST">
+
               <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
                   <i class="fas fa-envelope me-2"></i>
-                  Request Resume Access
+                  Send Request & Get Resume
                 </button>
               </div>
             </form>
@@ -90,8 +97,8 @@ Resume Download | {{ .Site.Title }}
             <div class="spinner-border text-primary mb-3" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
-            <h4 class="mb-3">Processing Your Request</h4>
-            <p class="lead">Generating secure access and sending email...</p>
+            <h4 class="mb-3">Sending Your Request</h4>
+            <p class="lead">Your request is being submitted...</p>
             <div class="progress mt-4">
               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
             </div>
@@ -102,10 +109,10 @@ Resume Download | {{ .Site.Title }}
             <div class="success-icon mb-4">
               <i class="fas fa-check-circle fa-5x text-success"></i>
             </div>
-            <h3 class="mb-3">Email Sent Successfully!</h3>
+            <h3 class="mb-3">Request Sent Successfully!</h3>
             <div class="alert alert-success">
-              <h5><i class="fas fa-envelope me-2"></i>Check Your Email</h5>
-              <p class="mb-2">I've sent you an email with:</p>
+              <h5><i class="fas fa-magic me-2"></i>Automatic Resume Delivery</h5>
+              <p class="mb-2">You'll receive an automated email shortly with:</p>
               <ul class="list-unstyled">
                 <li>✓ Direct link to my resume</li>
                 <li>✓ Password to access the document</li>
@@ -114,29 +121,29 @@ Resume Download | {{ .Site.Title }}
             </div>
 
             <div class="email-info mt-4 p-3 bg-light rounded">
-              <h6>Email sent to: <span id="emailAddress" class="text-primary"></span></h6>
+              <h6>Auto-response email will be sent to: <span id="emailAddress" class="text-primary"></span></h6>
               <p class="mb-2 small text-muted">
                 <i class="fas fa-info-circle me-1"></i>
-                If you don't see the email in your inbox, please check your spam/junk folder.
+                The email is sent automatically within a few minutes. Please check your spam/junk folder if you don't see it.
               </p>
             </div>
 
             <div class="text-center mt-4">
               <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary me-3">
-                <i class="fas fa-reply me-2"></i>
-                Reply to Email
+                <i class="fas fa-envelope me-2"></i>
+                Email Me Directly
               </a>
               <button type="button" class="btn btn-outline-secondary" id="startOverBtn">
                 <i class="fas fa-redo me-2"></i>
-                Start Over
+                Submit Another Request
               </button>
             </div>
           </div>
 
           <div class="mt-4 text-center">
             <small class="text-muted">
-              <i class="fas fa-shield-alt me-1"></i>
-              Your information is secure and will only be used to send you the resume and establish professional contact.
+              <i class="fas fa-robot me-1"></i>
+              This form triggers an automatic response. You'll receive my resume instantly!
             </small>
           </div>
         </div>
@@ -172,14 +179,46 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
 
   // Show processing step
   showStep('processingStep');
-
-  // Start progress animation
   animateProgress();
 
-  // Send email (simulate the automated process)
-  setTimeout(() => {
-    sendResumeEmail();
-  }, 3000);
+  // Create email that will trigger Gmail auto-response
+  const subject = encodeURIComponent(`RESUME REQUEST - ${userFormData.firstName} ${userFormData.lastName}`);
+
+  let emailBody = `Resume Request Details:\n\n`;
+  emailBody += `Name: ${userFormData.firstName} ${userFormData.lastName}\n`;
+  emailBody += `Email: ${userFormData.email}\n`;
+  emailBody += `Company: ${userFormData.company || 'Not provided'}\n`;
+  emailBody += `Purpose: ${userFormData.purpose.replace('_', ' ')}\n`;
+  emailBody += `Message: ${userFormData.message}\n`;
+  emailBody += `Timestamp: ${userFormData.timestamp}\n\n`;
+  emailBody += `Please send resume access to: ${userFormData.email}`;
+
+  const encodedBody = encodeURIComponent(emailBody);
+  const mailtoLink = `mailto:mohith.n2022@gmail.com?subject=${subject}&body=${encodedBody}&cc=${userFormData.email}`;
+
+  // Submit to Netlify for tracking
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(this)).toString()
+  })
+  .then(() => {
+    setTimeout(() => {
+      // Open user's email client to send the request
+      window.location.href = mailtoLink;
+
+      // Show success step
+      showStep('successStep');
+      document.getElementById('emailAddress').textContent = userFormData.email;
+
+      console.log('Resume request initiated:', userFormData);
+    }, 2000);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('There was an error submitting your request. Please try emailing me directly.');
+    showStep('formStep');
+  });
 });
 
 function showStep(stepId) {
@@ -196,68 +235,12 @@ function animateProgress() {
   const progressBar = document.getElementById('progressBar');
   let width = 0;
   const interval = setInterval(() => {
-    width += 10;
+    width += 20;
     progressBar.style.width = width + '%';
     if (width >= 100) {
       clearInterval(interval);
     }
   }, 200);
-}
-
-function sendResumeEmail() {
-  // Generate a unique password (in real implementation, this would be done server-side)
-  const password = generatePassword();
-
-  // Log the interaction for your records
-  console.log('Resume request processed:', {
-    ...userFormData,
-    password: password,
-    processedAt: new Date().toISOString()
-  });
-
-  // In a real implementation, you would:
-  // 1. Call your backend API to send the email
-  // 2. The backend would use a service like SendGrid, Mailgun, or AWS SES
-  // 3. Email would contain the Google Drive link and password
-
-  // For now, simulate successful email sending
-  simulateEmailSending(password);
-}
-
-function generatePassword() {
-  // Generate a secure password (8-10 characters, mix of letters and numbers)
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let password = '';
-  for (let i = 0; i < 8; i++) {
-    password += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return password;
-}
-
-function simulateEmailSending(password) {
-  // This simulates what your automated email would contain
-  const emailContent = `
-    Subject: Resume Access - ${userFormData.firstName} ${userFormData.lastName}
-
-    Hi ${userFormData.firstName},
-
-    Thank you for your interest in my resume! Here's your secure access:
-
-    📄 Resume Link: https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing
-    🔐 Password: ${password}
-
-    I appreciate your interest in ${userFormData.purpose.replace('_', ' ')} and look forward to connecting with you.
-
-    Best regards,
-    Mohith Nagendra
-    mohith.n2022@gmail.com
-  `;
-
-  console.log('Email content that would be sent:', emailContent);
-
-  // Show success step
-  showStep('successStep');
-  document.getElementById('emailAddress').textContent = userFormData.email;
 }
 
 // Start over functionality
@@ -392,6 +375,37 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 .dark #resume-download h4,
 .dark #resume-download h5,
 .dark #resume-download h6,
+.dark #resume-download p,
+.dark #resume-download .lead,
+.dark #resume-download .alert,
+.dark #resume-download .text-muted,
+.dark #resume-download small {
+  color: #000000 !important;
+}
+</style>
+{{ end }}
+[data-theme="dark"] #resume-download .text-muted,
+[data-theme="dark"] #resume-download small {
+  color: #000000 !important;
+}
+
+.dark #resume-download .form-label,
+.dark #resume-download .form-control,
+.dark #resume-download .form-select,
+.dark #resume-download h2,
+.dark #resume-download h3,
+.dark #resume-download h4,
+.dark #resume-download h5,
+.dark #resume-download h6,
+.dark #resume-download p,
+.dark #resume-download .lead,
+.dark #resume-download .alert,
+.dark #resume-download .text-muted,
+.dark #resume-download small {
+  color: #000000 !important;
+}
+</style>
+{{ end }}
 .dark #resume-download p,
 .dark #resume-download .lead,
 .dark #resume-download .alert,
