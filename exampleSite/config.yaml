@@ -224,7 +224,9 @@ params:
         companyUrl: "https://www.pmg.com/"
         date: "June 2025 - Present"
         content: |
-          **Graduate Leadership Program | Architecting AI Agentic Workflows**
+          <div style="background-color: #f8f9fa; padding: 8px 12px; border-radius: 4px; margin-bottom: 12px; border-left: 4px solid #007bff;">
+            <strong>Graduate Leadership Program | Architecting AI Agentic Workflows</strong>
+          </div>
 
           - Developing and implementing AI-driven solutions to enhance business processes and customer experiences.
           - Collaborating with cross-functional teams to design, develop, and deploy AI models and applications.
