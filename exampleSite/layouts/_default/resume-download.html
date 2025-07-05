@@ -17,7 +17,7 @@ Resume Download | {{ .Site.Title }}
           <div class="text-center mb-4">
             <i class="fas fa-file-pdf fa-4x text-primary mb-4"></i>
             <h2 class="mb-3">Access My Resume</h2>
-            <p class="lead">I'd love to connect! Please provide your details and I'll send you the resume access password via email.</p>
+            <p class="lead">I'd love to connect! Please provide your details and I'll automatically send you my resume.</p>
           </div>
 
           <!-- Step 1: Form -->
@@ -79,7 +79,7 @@ Resume Download | {{ .Site.Title }}
               <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-lg px-5" id="submitBtn">
                   <i class="fas fa-envelope me-2"></i>
-                  Request Resume Access
+                  Send Introduction Email
                 </button>
               </div>
             </form>
@@ -90,8 +90,8 @@ Resume Download | {{ .Site.Title }}
             <div class="spinner-border text-primary mb-3" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
-            <h4 class="mb-3">Processing Your Request</h4>
-            <p class="lead">Generating secure access and sending email...</p>
+            <h4 class="mb-3">Sending Your Request</h4>
+            <p class="lead">Your request is being submitted...</p>
             <div class="progress mt-4">
               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
             </div>
@@ -102,29 +102,30 @@ Resume Download | {{ .Site.Title }}
             <div class="success-icon mb-4">
               <i class="fas fa-check-circle fa-5x text-success"></i>
             </div>
-            <h3 class="mb-3">Email Sent Successfully!</h3>
-            <div class="alert alert-success">
-              <h5><i class="fas fa-envelope me-2"></i>Check Your Email</h5>
-              <p class="mb-2">I've sent you an email with:</p>
+            <h3 class="mb-3">Email Client Opened!</h3>
+            <div class="alert alert-info">
+              <h5><i class="fas fa-envelope-open me-2"></i>Ready to Send</h5>
+              <p class="mb-2">Your email client opened with a pre-filled message to me:</p>
               <ul class="list-unstyled">
-                <li>✓ Direct link to my resume</li>
-                <li>✓ Password to access the document</li>
-                <li>✓ My contact information</li>
+                <li>✓ Pre-filled subject line</li>
+                <li>✓ Your introduction and details</li>
+                <li>✓ Request for resume access</li>
               </ul>
+              <p class="mb-0"><strong>Please send the email from your email client to receive my resume!</strong></p>
             </div>
 
             <div class="email-info mt-4 p-3 bg-light rounded">
-              <h6>Email sent to: <span id="emailAddress" class="text-primary"></span></h6>
+              <h6>Email prepared for: <span id="emailAddress" class="text-primary"></span></h6>
               <p class="mb-2 small text-muted">
                 <i class="fas fa-info-circle me-1"></i>
-                If you don't see the email in your inbox, please check your spam/junk folder.
+                Once you send the email, I'll respond with my resume link and password.
               </p>
             </div>
 
             <div class="text-center mt-4">
               <a href="mailto:mohith.n2022@gmail.com" class="btn btn-outline-primary me-3">
-                <i class="fas fa-reply me-2"></i>
-                Reply to Email
+                <i class="fas fa-envelope me-2"></i>
+                Open Email Again
               </a>
               <button type="button" class="btn btn-outline-secondary" id="startOverBtn">
                 <i class="fas fa-redo me-2"></i>
@@ -135,8 +136,8 @@ Resume Download | {{ .Site.Title }}
 
           <div class="mt-4 text-center">
             <small class="text-muted">
-              <i class="fas fa-shield-alt me-1"></i>
-              Your information is secure and will only be used to send you the resume and establish professional contact.
+              <i class="fas fa-robot me-1"></i>
+              This form triggers an automatic response. You'll receive my resume instantly!
             </small>
           </div>
         </div>
@@ -172,14 +173,42 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
 
   // Show processing step
   showStep('processingStep');
-
-  // Start progress animation
   animateProgress();
 
-  // Send email (simulate the automated process)
+  // Create email that will open in their Gmail
+  const subject = encodeURIComponent(`RESUME REQUEST - ${userFormData.firstName} ${userFormData.lastName}`);
+
+  let emailBody = `Hi Mohith,\n\n`;
+  emailBody += `My name is ${userFormData.firstName} ${userFormData.lastName}`;
+  if (userFormData.company) {
+    emailBody += ` from ${userFormData.company}`;
+  }
+  emailBody += `.\n\n`;
+  emailBody += `I'm interested in: ${userFormData.purpose.replace('_', ' ')}\n\n`;
+  emailBody += `${userFormData.message}\n\n`;
+  emailBody += `My contact information:\n`;
+  emailBody += `Email: ${userFormData.email}\n`;
+  if (userFormData.company) {
+    emailBody += `Company: ${userFormData.company}\n`;
+  }
+  emailBody += `Timestamp: ${userFormData.timestamp}\n\n`;
+  emailBody += `I'd love to connect and learn more about potential opportunities to work together.\n\n`;
+  emailBody += `Best regards,\n${userFormData.firstName} ${userFormData.lastName}`;
+
+  const encodedBody = encodeURIComponent(emailBody);
+  const mailtoLink = `mailto:mohith.n2022@gmail.com?subject=${subject}&body=${encodedBody}`;
+
+  // Just log for your records (no Netlify submission)
+  console.log('Resume request initiated:', userFormData);
+
   setTimeout(() => {
-    sendResumeEmail();
-  }, 3000);
+    // Open user's email client to send the request
+    window.location.href = mailtoLink;
+
+    // Show success step
+    showStep('successStep');
+    document.getElementById('emailAddress').textContent = userFormData.email;
+  }, 2000);
 });
 
 function showStep(stepId) {
@@ -196,68 +225,12 @@ function animateProgress() {
   const progressBar = document.getElementById('progressBar');
   let width = 0;
   const interval = setInterval(() => {
-    width += 10;
+    width += 20;
     progressBar.style.width = width + '%';
     if (width >= 100) {
       clearInterval(interval);
     }
   }, 200);
-}
-
-function sendResumeEmail() {
-  // Generate a unique password (in real implementation, this would be done server-side)
-  const password = generatePassword();
-
-  // Log the interaction for your records
-  console.log('Resume request processed:', {
-    ...userFormData,
-    password: password,
-    processedAt: new Date().toISOString()
-  });
-
-  // In a real implementation, you would:
-  // 1. Call your backend API to send the email
-  // 2. The backend would use a service like SendGrid, Mailgun, or AWS SES
-  // 3. Email would contain the Google Drive link and password
-
-  // For now, simulate successful email sending
-  simulateEmailSending(password);
-}
-
-function generatePassword() {
-  // Generate a secure password (8-10 characters, mix of letters and numbers)
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let password = '';
-  for (let i = 0; i < 8; i++) {
-    password += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return password;
-}
-
-function simulateEmailSending(password) {
-  // This simulates what your automated email would contain
-  const emailContent = `
-    Subject: Resume Access - ${userFormData.firstName} ${userFormData.lastName}
-
-    Hi ${userFormData.firstName},
-
-    Thank you for your interest in my resume! Here's your secure access:
-
-    📄 Resume Link: https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing
-    🔐 Password: ${password}
-
-    I appreciate your interest in ${userFormData.purpose.replace('_', ' ')} and look forward to connecting with you.
-
-    Best regards,
-    Mohith Nagendra
-    mohith.n2022@gmail.com
-  `;
-
-  console.log('Email content that would be sent:', emailContent);
-
-  // Show success step
-  showStep('successStep');
-  document.getElementById('emailAddress').textContent = userFormData.email;
 }
 
 // Start over functionality
