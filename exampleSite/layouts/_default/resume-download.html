@@ -85,18 +85,6 @@ Resume Download | {{ .Site.Title }}
             </form>
           </div>
 
-          <!-- Step 2: Processing -->
-          <div id="processingStep" class="step-content text-center" style="display: none;">
-            <div class="spinner-border text-primary mb-3" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <h4 class="mb-3">Sending Your Request</h4>
-            <p class="lead">Your request is being submitted...</p>
-            <div class="progress mt-4">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
-            </div>
-          </div>
-
           <!-- Step 3: Success -->
           <div id="successStep" class="step-content text-center" style="display: none;">
             <div class="success-icon mb-4">
@@ -170,6 +158,25 @@ Resume Download | {{ .Site.Title }}
   </div>
 </section>
 
+<!-- Full-screen overlay for processing -->
+<div id="processingOverlay" class="processing-overlay" style="display: none;">
+  <div class="processing-content">
+    <div class="spinner-border text-primary mb-4" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <h3 class="text-white mb-3">Sending Your Request</h3>
+    <p class="text-white-50 mb-4">Your request is being submitted...</p>
+    <div class="progress-container">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="progressBar"></div>
+      </div>
+      <div class="progress-text text-white-50 mt-2">
+        <span id="progressText">Preparing your request...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 let userFormData = {};
 
@@ -195,8 +202,8 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
     timestamp: new Date().toISOString()
   };
 
-  // Show processing step
-  showStep('processingStep');
+  // Show processing overlay
+  showProcessingOverlay();
   animateProgress();
 
   // Create email template
@@ -207,7 +214,8 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
     try {
       window.location.href = window.emailContent.mailtoLink;
 
-      // Show success step
+      // Hide processing overlay and show success step
+      hideProcessingOverlay();
       showStep('successStep');
       document.getElementById('emailAddress').textContent = userFormData.email;
 
@@ -218,10 +226,21 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
 
     } catch (error) {
       console.error('Mailto failed:', error);
+      hideProcessingOverlay();
       showEmailFallback();
     }
   }, 2000);
 });
+
+function showProcessingOverlay() {
+  document.getElementById('processingOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function hideProcessingOverlay() {
+  document.getElementById('processingOverlay').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restore scrolling
+}
 
 function createEmailTemplate() {
   const subject = encodeURIComponent('RESUME REQUEST - ' + userFormData.firstName + ' ' + userFormData.lastName);
@@ -383,14 +402,31 @@ function showStep(stepId) {
 
 function animateProgress() {
   const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const messages = [
+    'Preparing your request...',
+    'Validating information...',
+    'Creating email template...',
+    'Opening email client...'
+  ];
+
   let width = 0;
+  let messageIndex = 0;
+
   const interval = setInterval(() => {
-    width += 20;
+    width += 25;
     progressBar.style.width = width + '%';
+
+    if (messageIndex < messages.length - 1) {
+      progressText.textContent = messages[messageIndex];
+      messageIndex++;
+    }
+
     if (width >= 100) {
+      progressText.textContent = 'Complete!';
       clearInterval(interval);
     }
-  }, 200);
+  }, 500);
 }
 
 // Start over functionality
@@ -463,6 +499,69 @@ document.getElementById('startOverBtn').addEventListener('click', function() {
 
 .email-info {
   border-left: 4px solid #0dcaf0;
+}
+
+/* Processing overlay styles */
+.processing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.processing-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.processing-content .spinner-border {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.3em;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.processing-overlay .progress {
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.processing-overlay .progress-bar {
+  background: linear-gradient(45deg, #0d6efd, #0b5ed7);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Remove the old step-content min-height since we're using overlay */
+.step-content {
+  min-height: auto;
+}
+
+/* Ensure overlay appears above everything */
+.processing-overlay {
+  position: fixed !important;
+  z-index: 99999 !important;
 }
 
 /* Force black text for form elements in both light and dark modes */
