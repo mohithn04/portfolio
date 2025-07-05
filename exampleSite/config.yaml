@@ -224,7 +224,7 @@ params:
         companyUrl: "https://www.pmg.com/"
         date: "June 2025 - Present"
         content: |
-          Graduate Leadership Program | Architecting AI Agentic Workflows
+          	Graduate Leadership Program | Architecting AI Agentic Workflows
           - Developing and implementing AI-driven solutions to enhance business processes and customer experiences.
           - Collaborating with cross-functional teams to design, develop, and deploy AI models and applications.
           - Conducting research and analysis to identify opportunities for AI integration and optimization.
@@ -327,7 +327,7 @@ params:
           - Developed and implemented software features for clients using languages such as Java, Javascript, HTML/CSS
           -	Participated in agile development processes, including sprint planning and scrum meetings.
           - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
-          - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, and Cloud Service Technology.
+          - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, Cloud Service Technology, and Remote Support Scenarios.
 
       - job: "Genome Computing Project Manager & Researcher"
         company: "UMD FIRE"
