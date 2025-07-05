@@ -220,27 +220,27 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
 });
 
 function createEmailTemplate() {
-  const subject = encodeURIComponent(`RESUME REQUEST - ${userFormData.firstName} ${userFormData.lastName}`);
+  const subject = encodeURIComponent('RESUME REQUEST - ' + userFormData.firstName + ' ' + userFormData.lastName);
 
-  let emailBody = `Hi Mohith,\n\n`;
-  emailBody += `My name is ${userFormData.firstName} ${userFormData.lastName}`;
+  let emailBody = 'Hi Mohith,\n\n';
+  emailBody += 'My name is ' + userFormData.firstName + ' ' + userFormData.lastName;
   if (userFormData.company) {
-    emailBody += ` from ${userFormData.company}`;
+    emailBody += ' from ' + userFormData.company;
   }
-  emailBody += `.\n\n`;
-  emailBody += `I'm interested in: ${userFormData.purpose.replace('_', ' ')}\n\n`;
-  emailBody += `${userFormData.message}\n\n`;
-  emailBody += `My contact information:\n`;
-  emailBody += `Email: ${userFormData.email}\n`;
+  emailBody += '.\n\n';
+  emailBody += 'I\'m interested in: ' + userFormData.purpose.replace('_', ' ') + '\n\n';
+  emailBody += userFormData.message + '\n\n';
+  emailBody += 'My contact information:\n';
+  emailBody += 'Email: ' + userFormData.email + '\n';
   if (userFormData.company) {
-    emailBody += `Company: ${userFormData.company}\n`;
+    emailBody += 'Company: ' + userFormData.company + '\n';
   }
-  emailBody += `Timestamp: ${userFormData.timestamp}\n\n`;
-  emailBody += `I'd love to connect and learn more about potential opportunities to work together.\n\n`;
-  emailBody += `Best regards,\n${userFormData.firstName} ${userFormData.lastName}`;
+  emailBody += 'Timestamp: ' + userFormData.timestamp + '\n\n';
+  emailBody += 'I\'d love to connect and learn more about potential opportunities to work together.\n\n';
+  emailBody += 'Best regards,\n' + userFormData.firstName + ' ' + userFormData.lastName;
 
   const encodedBody = encodeURIComponent(emailBody);
-  const mailtoLink = `mailto:mohith.n2022@gmail.com?subject=${subject}&body=${encodedBody}`;
+  const mailtoLink = 'mailto:mohith.n2022@gmail.com?subject=' + subject + '&body=' + encodedBody;
 
   // Store email content globally for reuse
   window.emailContent = {
@@ -257,7 +257,7 @@ function createEmailTemplate() {
 
 function openGmailWithTemplate() {
   if (window.emailContent) {
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${window.emailContent.to}&su=${window.emailContent.subject}&body=${window.emailContent.encodedBody}`;
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + window.emailContent.to + '&su=' + window.emailContent.subject + '&body=' + window.emailContent.encodedBody;
     window.open(gmailUrl, '_blank');
   }
 }
@@ -270,7 +270,7 @@ function retryMailtoWithTemplate() {
 
 function copyEmailContent() {
   if (window.emailContent) {
-    const emailText = `To: ${window.emailContent.to}\nSubject: ${decodeURIComponent(window.emailContent.subject)}\n\n${window.emailContent.body}`;
+    const emailText = 'To: ' + window.emailContent.to + '\nSubject: ' + decodeURIComponent(window.emailContent.subject) + '\n\n' + window.emailContent.body;
 
     navigator.clipboard.writeText(emailText).then(() => {
       // Create a temporary success message
@@ -296,17 +296,15 @@ function showEmailDetails() {
   // Show email details if copy fails
   const emailInfo = document.querySelector('.email-info');
   if (emailInfo && window.emailContent) {
-    const detailsHtml = `
-      <div class="mt-3 p-3 border rounded">
-        <h6>Email Details (Copy manually):</h6>
-        <p><strong>To:</strong> ${window.emailContent.to}</p>
-        <p><strong>Subject:</strong> ${decodeURIComponent(window.emailContent.subject)}</p>
-        <div class="mb-2">
-          <strong>Message:</strong>
-          <textarea class="form-control mt-1" rows="8" readonly onclick="this.select()">${window.emailContent.body}</textarea>
-        </div>
-      </div>
-    `;
+    const detailsHtml = '<div class="mt-3 p-3 border rounded">' +
+      '<h6>Email Details (Copy manually):</h6>' +
+      '<p><strong>To:</strong> ' + window.emailContent.to + '</p>' +
+      '<p><strong>Subject:</strong> ' + decodeURIComponent(window.emailContent.subject) + '</p>' +
+      '<div class="mb-2">' +
+        '<strong>Message:</strong>' +
+        '<textarea class="form-control mt-1" rows="8" readonly onclick="this.select()">' + window.emailContent.body + '</textarea>' +
+      '</div>' +
+      '</div>';
     emailInfo.innerHTML += detailsHtml;
   }
 }
@@ -315,23 +313,21 @@ function showEmailFallback() {
   // Add fallback options if mailto doesn't work
   const emailInfo = document.querySelector('.email-info');
   if (emailInfo && window.emailContent) {
-    const fallbackHtml = `
-      <div class="alert alert-warning mt-3">
-        <h6><i class="fas fa-exclamation-triangle me-2"></i>Email Client Not Opening?</h6>
-        <p class="mb-2">Try these alternatives:</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-          <button class="btn btn-primary btn-sm" onclick="openGmailWithTemplate()">
-            <i class="fab fa-google me-1"></i>Gmail
-          </button>
-          <button class="btn btn-outline-primary btn-sm" onclick="retryMailtoWithTemplate()">
-            <i class="fas fa-envelope me-1"></i>Retry
-          </button>
-          <button class="btn btn-outline-secondary btn-sm" onclick="copyEmailContent()">
-            <i class="fas fa-copy me-1"></i>Copy
-          </button>
-        </div>
-      </div>
-    `;
+    const fallbackHtml = '<div class="alert alert-warning mt-3">' +
+      '<h6><i class="fas fa-exclamation-triangle me-2"></i>Email Client Not Opening?</h6>' +
+      '<p class="mb-2">Try these alternatives:</p>' +
+      '<div class="d-grid gap-2 d-md-flex justify-content-md-center">' +
+        '<button class="btn btn-primary btn-sm" onclick="openGmailWithTemplate()">' +
+          '<i class="fab fa-google me-1"></i>Gmail' +
+        '</button>' +
+        '<button class="btn btn-outline-primary btn-sm" onclick="retryMailtoWithTemplate()">' +
+          '<i class="fas fa-envelope me-1"></i>Retry' +
+        '</button>' +
+        '<button class="btn btn-outline-secondary btn-sm" onclick="copyEmailContent()">' +
+          '<i class="fas fa-copy me-1"></i>Copy' +
+        '</button>' +
+      '</div>' +
+      '</div>';
     emailInfo.innerHTML += fallbackHtml;
   }
 }
