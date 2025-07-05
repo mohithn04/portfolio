@@ -226,6 +226,9 @@ document.getElementById('resumeForm').addEventListener('submit', function(e) {
 function createEmailTemplate() {
   const subject = encodeURIComponent('RESUME REQUEST - ' + userFormData.firstName + ' ' + userFormData.lastName);
 
+  // Get resume configuration from environment variables
+  const resumeLink = '{{ getenv "RESUME_GOOGLE_DRIVE_LINK" | default "https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing" }}';
+
   let emailBody = 'Hi Mohith,\n\n';
   emailBody += 'My name is ' + userFormData.firstName + ' ' + userFormData.lastName;
   if (userFormData.company) {
@@ -241,6 +244,7 @@ function createEmailTemplate() {
   }
   emailBody += 'Timestamp: ' + userFormData.timestamp + '\n\n';
   emailBody += 'I\'d love to connect and learn more about potential opportunities to work together.\n\n';
+  emailBody += 'Please send me access to your resume at: ' + resumeLink + '\n\n';
   emailBody += 'Best regards,\n' + userFormData.firstName + ' ' + userFormData.lastName;
 
   const encodedBody = encodeURIComponent(emailBody);

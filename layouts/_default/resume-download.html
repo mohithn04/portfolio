@@ -235,6 +235,10 @@ function generatePassword() {
 }
 
 function simulateEmailSending(password) {
+  // Get resume configuration from environment variables
+  const resumeLink = '{{ getenv "RESUME_GOOGLE_DRIVE_LINK" | default "https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing" }}';
+  const resumePassword = '{{ getenv "RESUME_PASSWORD" | default "DefaultPassword123" }}';
+
   // This simulates what your automated email would contain
   const emailContent = `
     Subject: Resume Access - ${userFormData.firstName} ${userFormData.lastName}
@@ -243,8 +247,8 @@ function simulateEmailSending(password) {
 
     Thank you for your interest in my resume! Here's your secure access:
 
-    📄 Resume Link: https://drive.google.com/file/d/1_iffxAdiC3LP4J89VsUYr1q4dcgCc2AN/view?usp=sharing
-    🔐 Password: ${password}
+    📄 Resume Link: ${resumeLink}
+    🔐 Password: ${resumePassword}
 
     I appreciate your interest in ${userFormData.purpose.replace('_', ' ')} and look forward to connecting with you.
 
