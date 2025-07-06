@@ -176,6 +176,8 @@ params:
       - name: "SQL"
         icon: "/images/sql.svg"
     items:
+      - name: "Swift"
+        icon: "fab fa-swift"
       - name: "Java"
         icon: "fab fa-java"
       - name: "Python"
