@@ -167,12 +167,8 @@ params:
     enable: true
     title: "A few technologies I've been working with recently:"
     customItems:
-      - name: "AWS"
-        icon: "fab fa-aws"
       - name: "Kubernetes"
         icon: "/images/kubernetes.svg"
-      - name: "Docker"
-        icon: "fab fa-docker"
       - name: "Kafka"
         icon: "/images/kafka.svg"
       - name: "Terraform"
@@ -196,6 +192,10 @@ params:
       - name: "C++"
         icon: "/images/cpp.svg"
     items:
+      - name: "AWS"
+        icon: "fab fa-aws"
+      - name: "Docker"
+        icon: "fab fa-docker"
       - name: "Python"
         icon: "fab fa-python"
       - name: "Golang"
