@@ -175,6 +175,8 @@ params:
         icon: "/images/Kotlin.svg"
       - name: "SQL"
         icon: "/images/sql.svg"
+      - name: "Scala"
+        icon: "/images/Scala.svg"
     items:
       - name: "Swift"
         icon: "fab fa-swift"
@@ -213,6 +215,8 @@ params:
         icon: "/images/tailwind.svg"
       - name: "PyTorch"
         icon: "/images/pytorch.svg"
+      - name: "TensorFlow"
+        icon: "/images/TensorFlow.svg"
       - name: "Pandas"
         icon: "/images/pandas.svg"
       - name: "NumPy"
