@@ -171,8 +171,6 @@ params:
         icon: "/images/cpp.svg"
       - name: "TypeScript"
         icon: "/images/Typescript.svg"
-      - name: "TypeScript"
-        icon: "/images/ts.svg"
       - name: "Kotlin"
         icon: "/images/Kotlin.svg"
       - name: "SQL"
