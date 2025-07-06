@@ -124,7 +124,11 @@ params:
     intro: "Hi, my name is"
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
-    content: "As a Senior year Computer Science student on the Machine Learning track with a minor in Entrepreneurial Leadership at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
+    content: "I'm a Computer Science graduate from the University of Maryland, specialized in Machine Learning with a minor in Entrepreneurial Leadership. I'm especially interested in high-performance systems, applied AI, and optimization.
+              Across roles at Oracle, AbbVie, and now PMG, I've architected large-scale backend systems, built agentic workflows powered by LLMs, and deployed ML pipelines at scale. This includes fraud detection using Graph Neural Networks and vector database-powered retrieval systems, among other impactful projects.
+              My experience spans distributed computing (MPI, CUDA, Ray), cloud-native infrastructure (AWS, Docker, Kubernetes, Terraform), and full-stack engineering (Go, TypeScript, React). I'm passionate about building performant, production-grade AI systems and developing tools that drive measurable business outcomes.
+              Feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/) to learn more about my technical journey, reflections on machine learning, agentic workflows, system design, and innovation.
+              I'm always open to new connections and conversations. Let's get in touch."
     image: /images/Mohith-Grad.jpg
     bottomImage:
       enable: true
