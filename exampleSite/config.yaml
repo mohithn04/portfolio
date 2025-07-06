@@ -125,10 +125,10 @@ params:
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
     content: "I'm a Computer Science graduate from the University of Maryland, specialized in Machine Learning with a minor in Entrepreneurial Leadership. I'm especially interested in high-performance systems, applied AI, and optimization.
-              Across roles at Oracle, AbbVie, and now PMG, I've architected large-scale backend systems, built agentic workflows powered by LLMs, and deployed ML pipelines at scale. This includes fraud detection using Graph Neural Networks and vector database-powered retrieval systems, among other impactful projects.
-              My experience spans distributed computing (MPI, CUDA, Ray), cloud-native infrastructure (AWS, Docker, Kubernetes, Terraform), and full-stack engineering (Go, TypeScript, React). I'm passionate about building performant, production-grade AI systems and developing tools that drive measurable business outcomes.
-              Feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/) to learn more about my technical journey, reflections on machine learning, agentic workflows, system design, and innovation.
-              I'm always open to new connections and conversations. Let's get in touch."
+              \nAcross roles at Oracle, AbbVie, and now PMG, I've architected large-scale backend systems, built agentic workflows powered by LLMs, and deployed ML pipelines at scale. This includes fraud detection using Graph Neural Networks and vector database-powered retrieval systems, among other impactful projects.
+              \nMy experience spans distributed computing (MPI, CUDA, Ray), cloud-native infrastructure (AWS, Docker, Kubernetes, Terraform), and full-stack engineering (Go, TypeScript, React). I'm passionate about building performant, production-grade AI systems and developing tools that drive measurable business outcomes.
+              \nFeel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/) to learn more about my technical journey, reflections on machine learning, agentic workflows, system design, and innovation.
+              \nI'm always open to new connections and conversations. Let's get in touch."
     image: /images/Mohith-Grad.jpg
     bottomImage:
       enable: true
@@ -159,13 +159,25 @@ params:
     title: "About Me"
     image: "/images/IMG-5204.JPG"
     content: |-
-      I am a computer science student with a passion for software development, data analysis, and web/app development. I'm always eager to learn more and take on new challenges. I believe in the power of technology to solve problems and make our lives better, and I strive to create software that is user-friendly, efficient, and impactful.
+      I'm a Computer Science graduate from the University of Maryland, with a specialization in Machine Learning and a minor in Entrepreneurial Leadership. I'm passionate about building high-performance, scalable systems and applying AI to solve real-world problems in meaningful, measurable ways.
 
-      In my spare time, I enjoy soccer, volleyball, basketball, and puzzles. I believe that balance is key to a fulfilling life, and I make sure to pursue my passions outside of work as well.
+      Over the last few years, I've worked across several domains, including backend infrastructure, applied machine learning, agentic AI workflows, and full-stack development. At companies like Oracle, AbbVie, and PMG, I've delivered solutions that operate at scale, such as:
 
-      I am currently working on a project that will be used to help enhance the user experience for nightlife enthusiasts.
+      - Fraud detection using Graph Neural Networks
 
-      Feel free to check out [**my blog**](https://mohithn.netlify.app/blogs/) or browse my portfolio to see some of the projects I've worked on. If you'd like to get in touch, don't hesitate to contact me. I'm always open to new opportunities and collaborations.
+      - Retrieval systems powered by vector databases
+
+      - Microservices supporting millions of users
+
+      - LLM-based agents that automate workflows and extract insights from unstructured data
+
+      I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve.
+
+      Outside of work, I enjoy soccer, volleyball, basketball, and puzzles. Staying active and curious helps me maintain balance and focus.
+
+      Right now, I'm continuing to grow as an engineer and working on tools that improve how people interact with digital experiences.
+
+      Feel free to explore my portfolio or check out [**my blog**](https://mohithn.netlify.app/blogs/) for project breakdowns and insights. If you're working on something interesting or just want to connect, I'd love to hear from you.
 
   skills:
     enable: true
