@@ -171,6 +171,8 @@ params:
         icon: "/images/C.svg"
       - name: "SQL"
         icon: "/images/sql.svg"
+      - name: "C++"
+        icon: "/images/cpp.svg"
     items:
       - name: "Java"
         icon: "fab fa-java"
