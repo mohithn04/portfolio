@@ -124,7 +124,7 @@ params:
     intro: "Hi, my name is"
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
-    content: "As a Senior year Computer Science student on the Machine Learning track with a minor in Innovation & Entrepreneurship at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
+    content: "As a Senior year Computer Science student on the Machine Learning track with a minor in Entrepreneurial Leadership at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
     image: /images/Mohith-Grad.jpg
     bottomImage:
       enable: true
@@ -271,7 +271,7 @@ params:
           - Conducting code reviews, testing, and debugging to ensure the quality and reliability of software applications.
           - Utilizing agile methodologies to manage projects and deliver software solutions on time and within budget.
 
-      - job: "Software Engineer Intern"
+      - job: "Machine Learning Engineer Intern"
         company: "Oracle"
         companyUrl: "https://www.oracle.com/"
         date: "June - September 2024"
@@ -296,7 +296,7 @@ params:
           - Engineered responsive email templates using MJML/HTML, ensuring cross-platform compatibility through testing on Litmus.
           - Collaborated with engineering teams to manage and troubleshoot email delivery and audience retrieval on Datadog and AWS.
 
-      - job: "Full Stack Developer"
+      - job: "Full Stack Engineer"
         company: "NitesOut"
         companyUrl: "https://www.nitesout.us/"
         date: "November 2023 - Present"
@@ -313,7 +313,7 @@ params:
           - Implementing features such as event discovery, ticket purchasing, and social interaction to provide a comprehensive platform for users.
           - Conducting thorough testing to identify and fix bugs, ensuring a smooth and reliable user experience.
 
-      - job: "Innovation & Software Development Intern"
+      - job: "Machine Learning Engineer Intern"
         company: "Airweb Digital"
         companyUrl: "https://www.airwebdigital.com/"
         date: "November 2023 - May 2024"
@@ -326,7 +326,7 @@ params:
           - Working directly with the CEO and consulting with company partners to align the projects with the company's strategic goals. Contributed to key decisions and strategies, and suggested new ideas or approaches that have been implemented.
           - Leveraging agile practices from experience to manage the projects, displaying initiative and leadership in a startup setting.
 
-      - job: "Full Stack Developer"
+      - job: "Full Stack Engineer"
         company: "Break Through Tech"
         companyUrl: "https://www.breakthroughtech.org/in-the-news/"
         date: "December 2023 - March 2024"
@@ -356,7 +356,7 @@ params:
           - Provided technical support and troubleshooted various technology issues in environments like Amazon AWS, Windows, and Linux.
           - Completed 30 hours of training and earned a certificate in Remote Support, Desktop Technology, Network Technology, Server Technology, Cloud Service Technology, and Remote Support Scenarios.
 
-      - job: "Genome Computing Project Manager & Researcher"
+      - job: "Genome Computing Project Manager & Lead Researcher"
         company: "UMD FIRE"
         companyUrl: "https://www.fire.umd.edu/gc"
         date: "Aug 2022 - May 2023"
@@ -375,7 +375,7 @@ params:
           - Employed tools such as PyMOL, Jupyter Notebooks, and Anaconda to facilitate data analysis and visualization.
           - Gained experience in programming, utilizing supercomputers, data analytics, and generating figures.
 
-      - job: "Volunteer Mentor"
+      - job: "Software Engineering and Robotics Mentor"
         company: "FIRST"
         companyUrl: "https://www.firstinspires.org/"
         date: "September 2023 - Present"
@@ -427,7 +427,7 @@ params:
         date: "2022 - 2025"
         GPA: "Currently 3.72 out of 4.0"
         content: |-
-          Minor: Innovation & Entrepreneurship (Robert H. Smith School of Business)
+          Minor: Entrepreneurial Leadership (Robert H. Smith School of Business)
 
           Relevant Coursework: Object Oriented Programming I & II, Discrete Structures, Computer Systems, Organization of Programming Languages
 
