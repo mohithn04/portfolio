@@ -127,9 +127,7 @@ params:
     content: |-
         I'm a Computer Science graduate specializing in Machine Learning and high-performance systems. I build scalable AI solutions and backend infrastructure that drive measurable business outcomes. Currently architecting ML pipelines and agentic workflows at PMG, with prior experience at Oracle and AbbVie.
 
-        **What Drives Me?**
-
-        I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
+        [**What Drives Me?**] I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
 
         Right now, I'm continuing to grow as an engineer and working on tools that improve how people interact with digital experiences.
 
@@ -179,7 +177,7 @@ params:
 
       Outside of work, I enjoy soccer, volleyball, basketball, and puzzles. Staying active and curious helps me maintain balance and focus.
 
-      Feel free to explore my portfolio or check out my blog for project breakdowns and technical insights. If you're working on something interesting or just want to connect, I'd love to hear from you.
+      Feel free to explore my portfolio or check out [**my blog**](https://mohithn.netlify.app/blogs/) for project breakdowns and technical insights. If you're working on something interesting or just want to connect, I'd love to hear from you.
   skills:
     enable: true
     title: "A few technologies I've been working with recently:"
