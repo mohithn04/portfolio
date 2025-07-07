@@ -4,6 +4,17 @@
 
 <!-- fontawesome -->
 <script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+
+<style>
+    .page-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+    .page-content li {
+        display: list-item;
+        margin-bottom: 0.5rem;
+    }
+</style>
 {{ end }}
 
 {{ define "title" }}
@@ -28,9 +39,9 @@
                             {{ .Params.name }}
                         </h2>
                         <div class="aboutImg-content">
-                            <ul class="list-inline pt-3 text-center">
+                            <ul class="pt-3 text-center">
                                 {{ range .Params.socialLinks.fontAwesomeIcons }}
-                                <li class="list-inline-item text-center">
+                                <li class="text-center">
                                     <a href="{{ .url }}" target="_blank">
                                         <i class="{{ .icon }}"></i>
                                     </a>
@@ -38,7 +49,7 @@
                                 {{ end }}
 
                                 {{ range .Params.socialLinks.customIcons }}
-                                <li class="list-inline-item text-center">
+                                <li class="text-center">
                                     <a href="{{ .url }}" target="_blank" class="img-icon">
                                         <img src="{{ .icon }}">
                                     </a>

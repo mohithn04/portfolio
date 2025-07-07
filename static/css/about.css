@@ -208,24 +208,22 @@
 #single aside.aboutImg .aboutImg-content ul {
     margin-bottom: 1em;
     opacity: 0.9;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 #single aside.aboutImg .aboutImg-content ul li a {
     border: 1px solid var(--primary-color);
-    padding: .7rem;
+    padding: .8rem 1rem;
     color: var(--text-color);
     border-radius: 10px;
     overflow: hidden;
+    display: block;
+    transition: all 0.3s ease;
 }
 
 #single aside.aboutImg .aboutImg-content ul li {
-    margin: .7rem .5rem;
-    margin-left: 0;
-}
-
-#single aside.aboutImg .aboutImg-content ul li:hover a {
-    opacity: .8;
-    color: var(--primary-color);
+    margin: .8rem 0;
 }
 
 /* Top scroll */

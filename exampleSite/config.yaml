@@ -124,7 +124,12 @@ params:
     intro: "Hi, my name is"
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
-    content: "As a Senior year Computer Science student on the Machine Learning track with a minor in Entrepreneurial Leadership at the University of Maryland College Park, my goal is to leverage my academic foundation and practical skills to excel in a dynamic and challenging role within the field of computer science. I am dedicated to contributing innovative solutions to real-world problems and driving forward technological advancements. To gain a deeper understanding of my journey and insights in the field of Computer Science, Data Analytics, Machine Learning, Innovation, and Entrepreneurship, feel free to explore [**my blog!**](https://mohithn.netlify.app/blogs/)"
+    content: |-
+        I'm a Computer Science graduate specializing in Machine Learning and high-performance systems. I build scalable AI solutions and backend infrastructure that drive measurable business outcomes. Currently architecting ML pipelines and agentic workflows at PMG, with prior experience at Oracle and AbbVie.
+
+        <strong>What Drives Me?</strong> I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
+
+        Feel free to explore [**my blog**](https://mohithn.netlify.app/blogs/) to learn more about my technical journey, or get in touch, I'm always open to new connections and conversations."
     image: /images/Mohith-Grad.jpg
     bottomImage:
       enable: true
@@ -155,14 +160,22 @@ params:
     title: "About Me"
     image: "/images/IMG-5204.JPG"
     content: |-
-      I am a computer science student with a passion for software development, data analysis, and web/app development. I'm always eager to learn more and take on new challenges. I believe in the power of technology to solve problems and make our lives better, and I strive to create software that is user-friendly, efficient, and impactful.
+      I'm a Computer Science graduate from the University of Maryland, with a specialization in Machine Learning and a minor in Entrepreneurial Leadership. I'm passionate about building high-performance, scalable systems and applying AI to solve real-world problems in meaningful, measurable ways.
 
-      In my spare time, I enjoy soccer, volleyball, basketball, and puzzles. I believe that balance is key to a fulfilling life, and I make sure to pursue my passions outside of work as well.
+      Over the last few years, I've worked across backend infrastructure, applied machine learning, agentic AI workflows, and full-stack development. At Oracle, AbbVie, and now PMG, I've delivered solutions that operate at scale, including:
 
-      I am currently working on a project that will be used to help enhance the user experience for nightlife enthusiasts.
+      - Fraud detection systems using Graph Neural Networks
+      - Retrieval systems powered by vector databases
+      - Microservices supporting millions of users
+      - LLM-based agents that automate workflows and extract insights from unstructured data
 
-      Feel free to check out [**my blog**](https://mohithn.netlify.app/blogs/) or browse my portfolio to see some of the projects I've worked on. If you'd like to get in touch, don't hesitate to contact me. I'm always open to new opportunities and collaborations.
+      My technical expertise spans distributed computing (MPI, CUDA, Ray), cloud-native infrastructure (AWS, Docker, Kubernetes, Terraform), and full-stack engineering (Go, TypeScript, React).
 
+      Beyond Code
+
+      Outside of work, I enjoy soccer, volleyball, basketball, and puzzles. Staying active and curious helps me maintain balance and focus.
+
+      Feel free to explore my portfolio or check out [**my blog**](https://mohithn.netlify.app/blogs/) for project breakdowns and technical insights. If you're working on something interesting or just want to connect, I'd love to hear from you.
   skills:
     enable: true
     title: "A few technologies I've been working with recently:"
