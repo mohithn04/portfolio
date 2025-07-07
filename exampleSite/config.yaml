@@ -124,9 +124,10 @@ params:
     intro: "Hi, my name is"
     title: "Mohith."
     subtitle: "Coding today for the solutions of tomorrow."
-    content: "I'm a Computer Science graduate specializing in Machine Learning and high-performance systems. I build scalable AI solutions and backend infrastructure that drive measurable business outcomes. Currently architecting ML pipelines and agentic workflows at PMG, with prior experience at Oracle and AbbVie.
+    content: |-
+        I'm a Computer Science graduate specializing in Machine Learning and high-performance systems. I build scalable AI solutions and backend infrastructure that drive measurable business outcomes. Currently architecting ML pipelines and agentic workflows at PMG, with prior experience at Oracle and AbbVie.
 
-        **What Drives Me**
+        **What Drives Me?**
 
         I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
 
@@ -165,18 +166,19 @@ params:
     content: |-
       I'm a Computer Science graduate from the University of Maryland, with a specialization in Machine Learning and a minor in Entrepreneurial Leadership. I'm passionate about building high-performance, scalable systems and applying AI to solve real-world problems in meaningful, measurable ways.
 
-      Professional Experience
       Over the last few years, I've worked across backend infrastructure, applied machine learning, agentic AI workflows, and full-stack development. At Oracle, AbbVie, and now PMG, I've delivered solutions that operate at scale, including:
 
-      Fraud detection systems using Graph Neural Networks
-      Retrieval systems powered by vector databases
-      Microservices supporting millions of users
-      LLM-based agents that automate workflows and extract insights from unstructured data
+      - Fraud detection systems using Graph Neural Networks
+      - Retrieval systems powered by vector databases
+      - Microservices supporting millions of users
+      - LLM-based agents that automate workflows and extract insights from unstructured data
 
       My technical expertise spans distributed computing (MPI, CUDA, Ray), cloud-native infrastructure (AWS, Docker, Kubernetes, Terraform), and full-stack engineering (Go, TypeScript, React).
 
       Beyond Code
+
       Outside of work, I enjoy soccer, volleyball, basketball, and puzzles. Staying active and curious helps me maintain balance and focus.
+
       Feel free to explore my portfolio or check out my blog for project breakdowns and technical insights. If you're working on something interesting or just want to connect, I'd love to hear from you.
   skills:
     enable: true
