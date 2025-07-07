@@ -127,9 +127,7 @@ params:
     content: |-
         I'm a Computer Science graduate specializing in Machine Learning and high-performance systems. I build scalable AI solutions and backend infrastructure that drive measurable business outcomes. Currently architecting ML pipelines and agentic workflows at PMG, with prior experience at Oracle and AbbVie.
 
-        [**What Drives Me?**] I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
-
-        Right now, I'm continuing to grow as an engineer and working on tools that improve how people interact with digital experiences.
+        <strong>What Drives Me?</strong> I enjoy working at the intersection of systems, AI, and optimization. I'm especially excited by problems that require both performance and creativity to solve. My entrepreneurial background helps me focus on solutions that create real business value, not just technical achievements.
 
         Feel free to explore [**my blog**](https://mohithn.netlify.app/blogs/) to learn more about my technical journey, or get in touch, I'm always open to new connections and conversations."
     image: /images/Mohith-Grad.jpg
